@@ -95,3 +95,60 @@ Request URL: /speedon/css/bootstrap-responsive.css
 Stack Trace:
 #0 C:\wamp\www\speedon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2014-04-10 07:35:25 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /speedon/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\speedon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-10 07:35:25 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /speedon/css/ui-lightness.jquery-ui-1.10.3.css
+Stack Trace:
+#0 C:\wamp\www\speedon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-10 07:35:44 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /speedon/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\speedon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-10 07:35:44 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /speedon/css/ui-lightness.jquery-ui-1.10.3.css
+Stack Trace:
+#0 C:\wamp\www\speedon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-10 07:35:50 Error: [MissingActionException] Action AssociationsController::add() could not be found.
+Exception Attributes: array (
+  'controller' => 'AssociationsController',
+  'action' => 'add',
+)
+Request URL: /speedon/associations/add
+Stack Trace:
+#0 C:\wamp\www\speedon\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\speedon\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(AssociationsController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\wamp\www\speedon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-04-10 07:35:50 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /speedon/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\wamp\www\speedon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+1 {main}
