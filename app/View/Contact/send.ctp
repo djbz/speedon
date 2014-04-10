@@ -1,4 +1,1 @@
-<html>
-
-<h1> Votre mail à été envoyer, merci.</h1>
-</html>
+<h1> EMAIL ENVOYÉ MERCI / gestion erreur email + faire un email correct</h1>

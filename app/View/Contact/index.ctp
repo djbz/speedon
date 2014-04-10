@@ -28,9 +28,9 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="">Accueil</a></li>
+            <li class="active"><a href="/">Accueil</a></li>
             <li><a href="#about">À propos</a></li>
-            <li><a href="contact">FAQ</a></li>
+            <li><a href="FAQ">FAQ</a></li>
             <li><a href="#inscription">Inscription</a></li>
           </ul>
           <form class="navbar-form navbar-right" role="form">

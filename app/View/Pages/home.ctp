@@ -45,58 +45,6 @@
       </div>
     </div>
 
-    <!-- Système de news -->
-    <div class="container">
-          <!-- GROSSE NEWS, la une quoi, image à adapter !-->
-          <div class="accordian">
-            <ul>
-              <li>
-                <div class="image_title">
-                  <a href="#">Lutte contre le cancer</a>
-                </div>
-                <a href="#">
-                  <img src="http://www.bondyblog.fr/wp-content/uploads/2012/11/ardoise-ecolier_1_1-640x320.jpg"/>
-                </a>
-              </li>
-              <li>
-                <div class="image_title">
-                  <a href="#">Action contre la faim</a>
-                </div>
-                <a href="#">
-                  <img src="http://www.bondyblog.fr/wp-content/uploads/2012/11/ardoise-ecolier_1_1-640x320.jpg"/>
-                </a>
-              </li>
-              <li>
-                <div class="image_title">
-                  <a href="#">Secours populaire</a>
-                </div>
-                <a href="#">
-                  <img src="http://www.bondyblog.fr/wp-content/uploads/2012/11/ardoise-ecolier_1_1-640x320.jpg"/>
-                </a>
-              </li>
-              <li>
-                <div class="image_title">
-                  <a href="#">Aide internationale pour l'enfance</a>
-                </div>
-                <a href="#">
-                  <img src="http://www.bondyblog.fr/wp-content/uploads/2012/11/ardoise-ecolier_1_1-640x320.jpg"/>
-                </a>
-              </li>
-              <li>
-                <div class="image_title">
-                  <a href="#">Médecins sans frontière</a>
-                </div>
-                <a href="#">
-                  <img src="http://www.bondyblog.fr/wp-content/uploads/2012/11/ardoise-ecolier_1_1-640x320.jpg"/>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-     
-
-
-
     <div class="container">
       <div class="row">
         <div class="col-md-4">
