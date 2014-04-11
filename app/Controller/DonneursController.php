@@ -8,7 +8,11 @@ class DonneursController extends AppController {
             $this->Donneur->create();
             
             $this->request->data['Donneur']['user_id'] = 22;
-            pr($this->request);
+			$this->request->data['Donneur']['don_mensuel'] = 0;
+            $this->request->data['Donneur']['montant_don_mensuel'] = 0;
+			
+			pr($this->request->data['Donneur']);
+			
             if ($this->Donneur->save($this->request->data)) {
             	
                 $this->Session->setFlash(__('Félicitation votre compte a bien été créé !'));

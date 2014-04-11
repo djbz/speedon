@@ -57,12 +57,19 @@ class UsersController extends AppController {
     public function add() {
         if ($this->request->is('post')) {
             $this->User->create();
+			
+			if($this->request->data['User']['password'] == $this->request->data['User']['repassword']){ 
+			
             if ($this->User->save($this->request->data)) {
-                $this->Session->setFlash(__('L\'user a été sauvegardé'));
             	$this->redirect(array('controller' => $this->request['data']['User']['role'].'s', 'action' => 'add',$this->User->id));
             } else {
-                $this->Session->setFlash(__('L\'user n\'a pas été sauvegardé. Merci de réessayer.'));
+				$this->Session->setFlash(__('<div class="col-md-10 col-md-offset-1 alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>Attention!</strong> Une erreur est survenue merci de réessayer.</div>'));
             }
+			
+			}
+			else{
+				$this->Session->setFlash(__('<div class="col-md-10 col-md-offset-1 alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>Attention!</strong> Vous n\'avez pas saisi les deux mêmes mot de passe.</div>'));
+			}
         }
     }
 // 

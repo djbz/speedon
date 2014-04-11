@@ -21,7 +21,7 @@
                         <br />
                         <div class="row">
                         	<div class="col-md-12">
-                           		<?php echo $this->Form->input('repassword', array('label' => false, 'class' => 'col-md-12 form-control', 'placeholder' => 'Confirmation du mot de passe')); ?>
+                           		<?php echo $this->Form->input('repassword', array('required' => 'required', 'type' => 'password', 'label' => false, 'class' => 'col-md-12 form-control', 'placeholder' => 'Confirmation du mot de passe')); ?>
                             </div>
                         </div>
                         <br />
@@ -40,7 +40,7 @@
                       </div>
                       <div class="row">
                           <div class="col-md-12 text-center">
-                                <input type="submit" class="btn btn-success span12" value="S'enregistrer"/>
+                                <input type="submit" class="btn btn-success span12" value="Rejoindre Speedon !"/>
                                 <?php echo $this->Form->end(); ?>
                            </div>
                       </div>

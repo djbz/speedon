@@ -43,19 +43,6 @@ class Donneur extends AppModel{
     );
 
     public $validate = array(
-        'password' => array(
-             'between' => array(
-                'rule'    => array('between', 6, 55),
-                'message' => 'Le mot de passe doit avoir une longueur comprise entre 6 et 55 caractères.',
-                'allowEmpty' => false,
-                'required' => true
-            )
-        ),
-        're_password' => array(
-            'rule' => array('equalToField', 'password'),
-            'message' => 'Les deux mots de passe ne correspondent pas.',
-            'required' => true
-        ),
         'nom' => array(
             'alphaNumeric' => array(
                 'rule'    => array('alphaNumeric'),
@@ -114,10 +101,6 @@ class Donneur extends AppModel{
         )
     );
     
-    function equalToField($array, $field) {
-        return strcmp($this->data[$this->alias][key($array)], $this->data[$this->alias][$field]) == 0;
-    }
-    
 	public function beforeValidate($options = array()){
 		$validator = $this->validator();
 		
@@ -153,18 +136,6 @@ class Donneur extends AppModel{
 		}
 	}
 	
-    public function beforeSave($options = array()) {
-        // encodage MD5
-        if (!empty($this->data[$this->alias]['password']) &&
-            !empty($this->data[$this->alias]['re_password'])
-        ) {
-
-            $this->data[$this->alias]['password'] = Security::hash($this->data['Donneur']['password'], 'md5', false);
-            $this->data[$this->alias]['re_password'] = Security::hash($this->data['Donneur']['re_password'], 'md5', false);
-        }
-       
-        return true;
-    }
 	
 }
 
