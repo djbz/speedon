@@ -3,7 +3,7 @@
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
-  				<div class="panel-heading text-center"><h5>Je suis un donneur...</h5></div>
+  				<div class="panel-heading text-center"><h1>Je suis un donneur...</h1></div>
   				<div style="color : black; text-align:justify"  class="panel-body">
     				<div class="container col-md-12">
 						<?php echo $this->Form->create('Donneur');?>

@@ -5,6 +5,7 @@ Nom :
 <br/>
 
 <?php
+        /* A AFFICHER SI C'EST UN DONNEUR QUI CONSULTE LA PAGE */
 	//echo $this->Html->link("AJOUTER CETTE ASSOCIATION A MES FAVORIS :D", array('controller' => 'favoris','action'=> 'saveFavori', $asso['Association']['id']));
 	echo $this->Html->link("AJOUTER CETTE ASSOCIATION A MES FAVORIS :D", array('controller' => 'donneurs','action'=> 'saveFavori', $asso['Association']['id']));
 	

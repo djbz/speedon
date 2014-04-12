@@ -107,14 +107,14 @@
                     </div>                   
                 </div>                
                 <div class="row text-center">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h3><?php echo $this->Html->link(
+                    <div class="col-md-4 col-md-offset-4">
+                        <?php echo $this->Html->link(
                                     'Modifier',
                                     array('action' => 'edit', $donneur['Donneur']['id']),
-                                    array('class' => 'btn btn-lg btn-warning active')
+                                    array('class' => 'btn btn-lg btn-block btn-warning active')
                                  );
                             ?>
-                        </h3>    
+                          
                     </div>
                     <!-- end IF -->
                 </div>
