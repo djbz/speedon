@@ -42,24 +42,33 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="#about">À propos</a></li>
+            <li><?php echo $this->Html->link('Les associations',array('controller' => 'FAQ', 'action' => 'index')); ?></li>
             <li><?php echo $this->Html->link('FAQ',array('controller' => 'FAQ', 'action' => 'index')); ?></li>
             <li><?php echo $this->Html->link('S\'inscrire',array('controller' => 'Users', 'action' => 'add')); ?></li>
 			<li><?php echo $this->Html->link('Nous contacter',array('controller' => 'Contact', 'action' => 'index')); ?></li>
           </ul>
-          <form class="navbar-form navbar-right" role="form">
-            <div class="form-group">
-              <input type="text" placeholder="Adresse mail" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Mot de passe" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Se connecter</button>
-          </form>
+          <div class="navbar-right navbar-form">
+          	
+            <?php 
+			if (!$this->Session->check('Auth.User.id')){
+			echo $this->Html->link('Se connecter',array('controller' => 'users', 'action' => 'login'),array('class' => 'btn btn-success', 'target' => '_blank')); 
+			}else{
+			echo "Bonjour <b>".$this->Session->read('Auth.User.username')."</b>&nbsp;&nbsp;";
+			echo $this->Html->link('Se deconnecter',array('controller' => 'users', 'action' => 'logout'),array('class' => 'btn btn-default', 'target' => '_blank')); 	
+			}
+			?>
+        
+        
+          </div>
         </div><!--/.navbar-collapse -->
       </div>
     </div>
 	
-    <?php echo $this->fetch('content'); ?>
+    <?php 
+	echo $this->session->flash();
+	echo $this->fetch('content'); 
+	
+	?>
 
       <hr>
       <footer>

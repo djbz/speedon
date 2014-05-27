@@ -66,7 +66,7 @@ class DATABASE_CONFIG {
 		'persistent' => false,
 		'host' => 'localhost',
 		'login' => 'root', // Login MySQL ICI 
-		'password' => '', // Mdp MySQL ICI
+		'password' => 'root', // Mdp MySQL ICI
 		'database' => 'speedon',
 		'prefix' => '',
 		//'encoding' => 'utf8',

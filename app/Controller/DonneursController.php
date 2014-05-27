@@ -7,7 +7,7 @@ class DonneursController extends AppController {
         if ($this->request->is('post')) {
             $this->Donneur->create();
             
-            $this->request->data['Donneur']['user_id'] = 22;
+            $this->request->data['Donneur']['user_id'] = $idUser;
 			$this->request->data['Donneur']['don_mensuel'] = 0;
             $this->request->data['Donneur']['montant_don_mensuel'] = 0;
 			
