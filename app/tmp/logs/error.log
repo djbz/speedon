@@ -7049,3 +7049,255 @@ Request URL: /speedon/css/bootstrap-responsive.css
 Stack Trace:
 #0 C:\Program Files (x86)\wamp\www\speedon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2014-04-23 17:01:55 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[28000] [1045] Access denied for user \'root\'@\'localhost\' (using password: NO)',
+  'enabled' => true,
+)
+Request URL: /speedon/donneurs
+Stack Trace:
+#0 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\Datasource\DboSource.php(260): Mysql->connect()
+#1 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\Model.php(3471): ConnectionManager::getDataSource('default')
+#3 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\Model.php(1126): Model->setDataSource('default')
+#4 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\Model.php(3493): Model->setSource('donneurs')
+#5 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\Model.php(1353): Model->getDataSource()
+#6 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\Model.php(1445): Model->schema()
+#7 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Controller\Component\PaginatorComponent.php(396): Model->hasField('username')
+#8 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Controller\Component\PaginatorComponent.php(142): PaginatorComponent->validateSort(Object(Donneur), Array, Array)
+#9 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Controller\Controller.php(1079): PaginatorComponent->paginate('Donneur', Array, Array)
+#10 C:\Program Files (x86)\wamp\www\speedon\app\Controller\DonneursController.php(35): Controller->paginate('Donneur')
+#11 [internal function]: DonneursController->index()
+#12 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(DonneursController), Array)
+#13 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#14 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(DonneursController), Object(CakeRequest), Object(CakeResponse))
+#15 C:\Program Files (x86)\wamp\www\speedon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2014-04-23 17:01:56 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /speedon/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\Program Files (x86)\wamp\www\speedon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-23 17:01:56 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /speedon/css/ui-lightness.jquery-ui-1.10.3.css
+Stack Trace:
+#0 C:\Program Files (x86)\wamp\www\speedon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-23 17:02:21 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /speedon/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\Program Files (x86)\wamp\www\speedon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-23 17:02:21 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /speedon/css/ui-lightness.jquery-ui-1.10.3.css
+Stack Trace:
+#0 C:\Program Files (x86)\wamp\www\speedon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-23 17:02:37 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[28000] [1045] Access denied for user \'root\'@\'localhost\' (using password: NO)',
+  'enabled' => true,
+)
+Request URL: /speedon/Users/add
+Stack Trace:
+#0 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\Datasource\DboSource.php(260): Mysql->connect()
+#1 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\Model.php(3471): ConnectionManager::getDataSource('default')
+#3 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\Model.php(1126): Model->setDataSource('default')
+#4 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\Model.php(3493): Model->setSource('users')
+#5 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\Model.php(1353): Model->getDataSource()
+#6 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\View\Helper\FormHelper.php(199): Model->schema()
+#7 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\View\Helper\FormHelper.php(451): FormHelper->_introspectModel('User', 'fields')
+#8 C:\Program Files (x86)\wamp\www\speedon\app\View\Users\add.ctp(9): FormHelper->create('User')
+#9 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\View\View.php(929): include('C:\Program File...')
+#10 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\View\View.php(891): View->_evaluate('C:\Program File...', Array)
+#11 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\View\View.php(460): View->_render('C:\Program File...')
+#12 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Controller\Controller.php(952): View->render(NULL, NULL)
+#13 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Routing\Dispatcher.php(192): Controller->render()
+#14 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#15 C:\Program Files (x86)\wamp\www\speedon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2014-04-23 17:02:37 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /speedon/css/ui-lightness.jquery-ui-1.10.3.css
+Stack Trace:
+#0 C:\Program Files (x86)\wamp\www\speedon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-23 17:02:37 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /speedon/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\Program Files (x86)\wamp\www\speedon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-23 17:02:55 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[28000] [1045] Access denied for user \'root\'@\'localhost\' (using password: NO)',
+  'enabled' => true,
+)
+Request URL: /speedon/donneurs/index
+Stack Trace:
+#0 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\Datasource\DboSource.php(260): Mysql->connect()
+#1 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\Model.php(3471): ConnectionManager::getDataSource('default')
+#3 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\Model.php(1126): Model->setDataSource('default')
+#4 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\Model.php(3493): Model->setSource('donneurs')
+#5 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\Model.php(1353): Model->getDataSource()
+#6 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\Model.php(1445): Model->schema()
+#7 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Controller\Component\PaginatorComponent.php(396): Model->hasField('username')
+#8 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Controller\Component\PaginatorComponent.php(142): PaginatorComponent->validateSort(Object(Donneur), Array, Array)
+#9 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Controller\Controller.php(1079): PaginatorComponent->paginate('Donneur', Array, Array)
+#10 C:\Program Files (x86)\wamp\www\speedon\app\Controller\DonneursController.php(35): Controller->paginate('Donneur')
+#11 [internal function]: DonneursController->index()
+#12 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(DonneursController), Array)
+#13 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#14 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(DonneursController), Object(CakeRequest), Object(CakeResponse))
+#15 C:\Program Files (x86)\wamp\www\speedon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2014-04-23 17:02:55 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /speedon/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\Program Files (x86)\wamp\www\speedon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+1 {main}
+2014-04-23 17:05:55 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[42000] [1049] Unknown database \'speedon\'',
+  'enabled' => true,
+)
+Request URL: /speedon/donneurs/index
+Stack Trace:
+#0 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\Datasource\DboSource.php(260): Mysql->connect()
+#1 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\Model.php(3471): ConnectionManager::getDataSource('default')
+#3 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\Model.php(1126): Model->setDataSource('default')
+#4 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\Model.php(3493): Model->setSource('donneurs')
+#5 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\Model.php(1353): Model->getDataSource()
+#6 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\Model.php(1445): Model->schema()
+#7 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Controller\Component\PaginatorComponent.php(396): Model->hasField('username')
+#8 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Controller\Component\PaginatorComponent.php(142): PaginatorComponent->validateSort(Object(Donneur), Array, Array)
+#9 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Controller\Controller.php(1079): PaginatorComponent->paginate('Donneur', Array, Array)
+#10 C:\Program Files (x86)\wamp\www\speedon\app\Controller\DonneursController.php(35): Controller->paginate('Donneur')
+#11 [internal function]: DonneursController->index()
+#12 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(DonneursController), Array)
+#13 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#14 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(DonneursController), Object(CakeRequest), Object(CakeResponse))
+#15 C:\Program Files (x86)\wamp\www\speedon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2014-04-23 17:05:55 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /speedon/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\Program Files (x86)\wamp\www\speedon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-23 17:05:55 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /speedon/css/ui-lightness.jquery-ui-1.10.3.css
+Stack Trace:
+#0 C:\Program Files (x86)\wamp\www\speedon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-23 17:06:06 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[28000] [1045] Access denied for user \'root\'@\'localhost\' (using password: NO)',
+  'enabled' => true,
+)
+Request URL: /speedon/donneurs/index
+Stack Trace:
+#0 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\Datasource\DboSource.php(260): Mysql->connect()
+#1 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\ConnectionManager.php(105): DboSource->__construct(Array)
+#2 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\Model.php(3471): ConnectionManager::getDataSource('default')
+#3 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\Model.php(1126): Model->setDataSource('default')
+#4 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\Model.php(3493): Model->setSource('donneurs')
+#5 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\Model.php(1353): Model->getDataSource()
+#6 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Model\Model.php(1445): Model->schema()
+#7 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Controller\Component\PaginatorComponent.php(396): Model->hasField('username')
+#8 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Controller\Component\PaginatorComponent.php(142): PaginatorComponent->validateSort(Object(Donneur), Array, Array)
+#9 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Controller\Controller.php(1079): PaginatorComponent->paginate('Donneur', Array, Array)
+#10 C:\Program Files (x86)\wamp\www\speedon\app\Controller\DonneursController.php(35): Controller->paginate('Donneur')
+#11 [internal function]: DonneursController->index()
+#12 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(DonneursController), Array)
+#13 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#14 C:\Program Files (x86)\wamp\www\speedon\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(DonneursController), Object(CakeRequest), Object(CakeResponse))
+#15 C:\Program Files (x86)\wamp\www\speedon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2014-04-23 17:06:06 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /speedon/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\Program Files (x86)\wamp\www\speedon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-23 17:06:06 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /speedon/css/ui-lightness.jquery-ui-1.10.3.css
+Stack Trace:
+#0 C:\Program Files (x86)\wamp\www\speedon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-23 17:11:07 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /speedon/css/bootstrap-responsive.css
+Stack Trace:
+#0 C:\Program Files (x86)\wamp\www\speedon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-04-23 17:11:07 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /speedon/css/ui-lightness.jquery-ui-1.10.3.css
+Stack Trace:
+#0 C:\Program Files (x86)\wamp\www\speedon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-10 15:02:12 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /speedon/css/ui-lightness.jquery-ui-1.10.3.css
+Stack Trace:
+#0 C:\Program Files (x86)\wamp\www\speedon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
