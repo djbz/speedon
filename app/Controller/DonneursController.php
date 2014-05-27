@@ -3,33 +3,33 @@
 // app/Controller/DonneursController.php
 class DonneursController extends AppController {
 
-	public function add($idUser) {
+    public function add($idUser) {
         if ($this->request->is('post')) {
             $this->Donneur->create();
-            
+
             $this->request->data['Donneur']['user_id'] = $idUser;
-			$this->request->data['Donneur']['don_mensuel'] = 0;
+                        $this->request->data['Donneur']['don_mensuel'] = 0;
             $this->request->data['Donneur']['montant_don_mensuel'] = 0;
-			
-			pr($this->request->data['Donneur']);
-			
+
+                        pr($this->request->data['Donneur']);
+
             if ($this->Donneur->save($this->request->data)) {
-            	
+
                 $this->Session->setFlash(__('Félicitation votre compte a bien été créé !'));
-            	$this->redirect(array('action' => 'view',$this->Donneur->id));
+                $this->redirect(array('action' => 'view',$this->Donneur->id));
             } else {
                 $this->Session->setFlash(__('Nous sommes désolé, une erreur est survenue. Merci de réessayer.'));
             }
         }
     }
-	
-	public $paginate = array(
-		'limit' => 3,
-		'order' => array(
-            'Donneur.username' => 'asc'
-		),
-		'paramType' => 'querystring'
-	);
+
+    public $paginate = array(
+            'limit' => 3,
+            'order' => array(
+        'Donneur.username' => 'asc'
+            ),
+            'paramType' => 'querystring'
+    );
 	
     public function index(){
 		$donneurs = $this->paginate('Donneur');
@@ -77,14 +77,20 @@ class DonneursController extends AppController {
         }
     }
 	
-	public function saveFavori($id = null){
-		$this->Donneur->Association->save(array(
-			'Donneur' => array('id' => 1), //TODO : A CHANGER PAR L'ID DANS LA SESSION
-			'Association' => array ('id' => $id)
-		));
-		$this->Donneur->Association->create();
-		$this->Session->setFlash(__('Cette association a été ajouté à vos favoris'));
-		return $this->redirect(array('controller'=>'associations','action' => 'view', $id));
+	public function saveFavori($id = null){  
+            
+            // on récupère l'ID de l'utilisateur en cours (id donneur)
+            $donneur = $this->Donneur->findByUser_id($this->Session->read('Auth.User.id'));
+            if(!$donneur['Donneur']['id']){
+                throw new NotFoundException(__('Donneur invalide'));
+            }
+            $this->Donneur->Association->save(array(
+                    'Donneur' => array('id' => $donneur['Donneur']['id']), // L'ID du donneur qui a cliqué sur l'asso à ajouter à ses favoris
+                    'Association' => array ('id' => $id)
+            ));
+            $this->Donneur->Association->create();
+            $this->Session->setFlash(__('Cette association a été ajouté à vos favoris'));
+            return $this->redirect(array('controller'=>'associations','action' => 'view', $id));
 	}
 	
 	public function activationMensuelleDons(){

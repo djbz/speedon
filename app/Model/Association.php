@@ -23,7 +23,7 @@ class Association extends AppModel{
                 'joinTable' => 'associations_donneurs',
                 'foreignKey' => 'association_id',
                 'associationForeignKey' => 'donneur_id',
-                'unique' => true, // keepExisting ?
+                'unique' => false, // attention sinon, 1 seul donneur pour une seule asso
             )
     );
 }
