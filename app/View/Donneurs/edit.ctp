@@ -63,7 +63,7 @@
                             <div class="col-md-12">
                                 <?php echo $this->Form->input('adresse_postale', 
                                 array('type'=>'text', 'label'=>false, 
-                                    'class' => 'col-md-12 form-control', 'placeholder' => 'Nom')); ?>
+                                    'class' => 'col-md-12 form-control', 'placeholder' => 'Adresse')); ?>
                             </div>
                         </div>       
                         <br />

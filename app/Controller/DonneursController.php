@@ -66,6 +66,7 @@ class DonneursController extends AppController {
         if($this->request->is(array('post', 'put'))){
             $this->Donneur->id = $id;
             if($this->Donneur->save($this->request->data)){
+              
                 $this->Session->setFlash(__('Votre profil a été modifié'));
                 //return $this->redirect(array('action' => 'index'));
                 return $this->redirect(array('controller'=>'donneurs','action' => 'view',$id));
@@ -99,8 +100,11 @@ class DonneursController extends AppController {
 		foreach($donneurs as $donneur){
 			if($donneur['Donneur']['don_mensuel'] == true){
 				$montantMensuel = $donneur['Donneur']['montant_don_mensuel'];
+                                
 				$nbAssociationFavories = count($donneur['Association']); // nombre d'associations favorites
-				$montant_divise = round($montantMensuel / $nbAssociationFavories, 2);
+				
+                                $montant_divise = floor(($montantMensuel / $nbAssociationFavories)*pow(10,2))/pow(10,2);
+                             
 				foreach($donneur['Association'] as $asso){
 					$don = array('montant' => $montant_divise, 
 								 'donneur_id' => $donneur['Donneur']['id'],
@@ -112,7 +116,7 @@ class DonneursController extends AppController {
 				}
 			}
 		}
-		$this->Session->setFlash(__('Génération des dons mensuels conbfirmée.'));
+		$this->Session->setFlash(__('Génération des dons mensuels confirmée.'));
 		return $this->redirect(array('controller'=>'donneurs','action' => 'index'));
 	}
 } 
