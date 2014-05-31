@@ -29,6 +29,7 @@ class DonsController extends AppController {
             if($this->request->is(array('post', 'put'))){
                             $this->request->data['Don']['donneur_id'] = $donneur['Donneur']['id']; //ID de l'utilisateur courant
                             $this->request->data['Don']['association_id'] = $id;
+                            $this->request->data['Don']['date'] = date("Y-m-d H:i:s");
                 if($this->Don->save($this->request->data)){
                     $this->Session->setFlash(__('Don validé ! Merci !'));
                     return $this->redirect(array('controller'=>'associations','action' => 'view', $id));

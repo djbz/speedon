@@ -24,7 +24,7 @@ class DonneursController extends AppController {
     }
 
     public $paginate = array(
-            'limit' => 3,
+            'limit' => 5,
             'order' => array(
         'Donneur.username' => 'asc'
             ),
@@ -107,8 +107,9 @@ class DonneursController extends AppController {
                              
 				foreach($donneur['Association'] as $asso){
 					$don = array('montant' => $montant_divise, 
-								 'donneur_id' => $donneur['Donneur']['id'],
-								 'association_id' => $asso['id']
+                                                    'donneur_id' => $donneur['Donneur']['id'],
+                                                    'association_id' => $asso['id'],
+                                                    'date' => date("Y-m-d H:i:s")
 					);
 					// Creation du don
 					$this->Don->create();
@@ -119,14 +120,37 @@ class DonneursController extends AppController {
 		$this->Session->setFlash(__('Génération des dons mensuels confirmée.'));
 		return $this->redirect(array('controller'=>'donneurs','action' => 'index'));
 	}
-} 
+        
+         public function view_dons($id = null){
+             if(!$id){
+                throw new NotFoundException(__('Donneur invalide'));
+            }
+            $donneur = $this->Donneur->findById($id);
+            if (!$donneur) {
+                throw new NotFoundException(__('Invalid post'));
+            }
+            $this->loadModel('Don');
+            $this->paginate = array(
+                'conditions' => array('Don.donneur_id =' => $id),
+                'limit' => 5,
+                'order' => array(
+                        'Don.date' => 'desc'
+                    )
+                );
+  
+            $dons = $this->paginate('Don');
+       
+            $this->set('dons', $dons);
+         }
+                 
+    } 
 
 	function totalDon($donneur){
-		$totalDon = 0;
-        foreach($donneur['Don'] as $don){
-            $totalDon += $don['montant'];
-        }
-		return $totalDon;
+            $totalDon = 0;
+            foreach($donneur['Don'] as $don){
+                $totalDon += $don['montant'];
+            }
+            return $totalDon;
 	}
 	
 ?>

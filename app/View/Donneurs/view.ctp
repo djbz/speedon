@@ -66,7 +66,19 @@
                                     
                             ?>
                         </div>
-                    </div>
+                    </div><br/>
+                    <?php if($donneur['User']['id'] == $this->Session->read('Auth.User.id')){   //si le donneur consulte SON PROFIL?>
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-1" style="padding-left:0px;">
+                            <?php echo $this->Html->link(
+                                   'Consulter mes dons',
+                                   array('action' => 'view_dons', $donneur['Donneur']['id']),
+                                   array('class' => 'btn btn-lg btn-block btn-success active')
+                                );
+                            ?>
+                            </div>
+                        </div>
+                    <?php } ?>
                     <br/><br/>
                 </div>
                 <?php if($donneur['User']['id'] == $this->Session->read('Auth.User.id')){//si le donneur consulte SON PROFIL?>
@@ -118,17 +130,27 @@
                         <div class="col-md-12">
                             <strong>Montant du don mensuel : </strong><?php echo h($donneur['Donneur']['montant_don_mensuel']); ?>€<br/>
                         </div>
-                    </div>                   
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <strong>Montant du don mensuel : </strong><?php echo h($donneur['Donneur']['montant_don_mensuel']); ?>€<br/>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-md-12">      
+                            <?php echo $this->Html->link(
+                                        'Modifier',
+                                        array('action' => 'edit', $donneur['Donneur']['id']),
+                                        array('class' => 'btn btn-lg btn-block btn-warning active')
+                                     );
+                                ?>
+                        </div>
+                    </div>
                 </div>          
                 <div class="row text-center">
                     <div class="col-md-4 col-md-offset-4">
-                        <?php echo $this->Html->link(
-                                    'Modifier',
-                                    array('action' => 'edit', $donneur['Donneur']['id']),
-                                    array('class' => 'btn btn-lg btn-block btn-warning active')
-                                 );
-                            ?>
-                          
                     </div>
                     <!-- end IF -->
                 </div>
