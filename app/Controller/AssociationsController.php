@@ -12,17 +12,38 @@
  */
 class AssociationsController extends AppController {
 
-	public function index(){
-		// debug($this->Association->Favori->find('all'));
-		// die();
-	}
-	
+
+    public function index(){
+        if($this->request->is('post') && !empty($this->request->data['nomAsso'])){
+            $nomAsso = $this->request->data['nomAsso'];
+            $assos = $this->Association->find('all', array( 'conditions' => array("Association.nom_asso LIKE" => "%$nomAsso%" )));
+        }else{
+            $assos = $this->Association->find('all');
+        }
+
+        $this->set('assos', $assos);
+    }
+
+
+
 	public function view($id = null){
+
+        if(!$id){
+            throw new NotFoundException(__('Association invalide'));
+        }
+
 		$asso = $this->Association->findById($id);
+
+        if(!$asso){
+            throw new NotFoundException(__('Donneur invalide'));
+        }
+
 		$this->set('asso', $asso);
 		
 	}
-	
+
+
+
 	public function add($idUser) {
         if ($this->request->is('post')) {
             $this->Association->create();
@@ -38,6 +59,56 @@ class AssociationsController extends AppController {
             }
         }
     }
+
+
+
+    public function edit($id = null){
+
+        if(!$id){
+            throw new NotFoundException(__('Association invalide'));
+        }
+
+        $association = $this->Association->findById($id);
+        if (!$association) {
+            throw new NotFoundException(__('Invalid post'));
+        }
+        if($this->request->is(array('post', 'put'))){
+            $this->Association->id = $id;
+
+            if($this->request->data[''])
+            if($this->User->editUser($this->request->data['User'])){
+                echo "Yes";
+            }
+            else
+                echo "False";
+
+            if($this->Association->save($this->request->data)){
+                $this->Session->setFlash(__('L\'association a été modifié'));
+                return $this->redirect(array('controller'=>'associations','action' => 'view',$id));
+            }
+            $this->Session->setFlash(__('Impossible de modifier l\'association'));
+        }
+
+        if(!$this->request->data){
+            $this->request->data = $association;
+        }
+
+    }
+
+
+    public function totalDon($association){
+
+        $totalDon = 0;
+        foreach($association['Don'] as $don){
+            $totalDon += $don['montant'];
+        }
+        return $totalDon;
+
+    }
+
+
+
+
 	
 }
 

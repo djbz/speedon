@@ -42,7 +42,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="#about">À propos</a></li>
-            <li><?php echo $this->Html->link('Les associations',array('controller' => 'FAQ', 'action' => 'index')); ?></li>
+            <li><?php echo $this->Html->link('Les associations',array('controller' => 'Associations', 'action' => 'index')); ?></li>
             <li><?php echo $this->Html->link('FAQ',array('controller' => 'FAQ', 'action' => 'index')); ?></li>
             <li><?php echo $this->Html->link('S\'inscrire',array('controller' => 'Users', 'action' => 'add')); ?></li>
 			<li><?php echo $this->Html->link('Nous contacter',array('controller' => 'Contact', 'action' => 'index')); ?></li>
