@@ -54,7 +54,12 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			if (!$this->Session->check('Auth.User.id')){
 			echo $this->Html->link('Se connecter',array('controller' => 'users', 'action' => 'login'),array('class' => 'btn btn-success', 'target' => '_blank')); 
 			}else{
-			echo "Bonjour <b>".$this->Session->read('Auth.User.username')."</b>&nbsp;&nbsp;";
+				if($this->Session->read('Auth.User.role') == "Association"){
+					echo "Bonjour <b>".$this->Html->link($this->Session->read('Auth.User.username'),array('controller' => 'associations', 'action' => 'view',$this->Session->read('Auth.User.id')))."</b>&nbsp;&nbsp;";
+				}
+				if($this->Session->read('Auth.User.role') == "Donneur"){
+					echo "Bonjour <b>".$this->Html->link($this->Session->read('Auth.User.username'),array('controller' => 'donneurs', 'action' => 'view',$this->Session->read('Auth.User.id')))."</b>&nbsp;&nbsp;";
+				}
 			echo $this->Html->link('Se deconnecter',array('controller' => 'users', 'action' => 'logout'),array('class' => 'btn btn-default', 'target' => '_blank')); 	
 			}
 			?>

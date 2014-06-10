@@ -11,7 +11,7 @@ class DonneursController extends AppController {
                         $this->request->data['Donneur']['don_mensuel'] = 0;
             $this->request->data['Donneur']['montant_don_mensuel'] = 0;
 
-                        pr($this->request->data['Donneur']);
+                        //pr($this->request->data['Donneur']);
 
             if ($this->Donneur->save($this->request->data)) {
 
@@ -63,11 +63,29 @@ class DonneursController extends AppController {
         if (!$donneur) {
             throw new NotFoundException(__('Invalid post'));
         }
+		
+		
+		
         if($this->request->is(array('post', 'put'))){
             $this->Donneur->id = $id;
             if($this->Donneur->save($this->request->data)){
               
-                $this->Session->setFlash(__('Votre profil a été modifié'));
+			  	$this->Session->setFlash(__('Votre profil a été modifié'));
+			  
+			  	$this->loadModel('User');
+				$user = $this->User->findById($donneur['User']['id']);
+				
+				if($this->request->data['Donneur']['password'] != "" && ($this->request->data['Donneur']['password'] == $this->request->data['Donneur']['re_password'])){
+					
+					$user['User']['password'] = $this->request->data['Donneur']['password'];
+					$this->User->save($user);
+					//pr($user);
+				}
+				else{
+					$this->Session->setFlash(__('Le mot de passe n\'a pas été modifié'));
+				}
+				
+			  
                 //return $this->redirect(array('action' => 'index'));
                 return $this->redirect(array('controller'=>'donneurs','action' => 'view',$id));
             }
