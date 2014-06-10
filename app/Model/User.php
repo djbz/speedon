@@ -21,7 +21,7 @@ class User extends AppModel {
             )
         )
     );
-    public $hasMany = array(
+    public $hasOne = array(
         'Donneur' => array(
             'className'     => 'Donneur',
         )
