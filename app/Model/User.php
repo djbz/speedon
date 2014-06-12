@@ -28,6 +28,9 @@ class User extends AppModel {
         ),
 		'Association' => array(
             'className'     => 'Association',
+        ),
+		'Administrateur' => array(
+            'className'     => 'Administrateur',
         )
     );
 	

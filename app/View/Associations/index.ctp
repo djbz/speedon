@@ -31,10 +31,10 @@
                         <a href="<?php echo $this->Html->url(array('controller' => 'Associations', 'action' => 'view',$asso['Association']['id'] )); ?>">
                         <div class="panel panel-info col-md-4 col-md-offset-1">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><?php echo h($asso['Association']['nom_asso']); ?></h3>
+                                <h3 class="panel-title text-center"><?php echo h($asso['Association']['nom_asso']); ?></h3>
                             </div>
                             <div class="panel-body">
-                                <?php if ($asso['Association']['photo'] != "") echo $this->Html->image($asso['Association']['photo'], array('alt' => 'photo_profil', 'class' => 'img-circle')); ?>
+                                <?php if ($asso['Association']['photo'] != "") echo $this->Html->image($asso['Association']['photo'], array('alt' => 'photo_profil', 'class' => 'img-responsive img-circle')); ?>
                             </div>
                         </div>
                         </a>

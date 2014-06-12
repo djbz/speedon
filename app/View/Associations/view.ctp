@@ -9,7 +9,9 @@
                     <h5><?php echo h($asso['Association']['nom_asso']); ?></h5>
 
                     <div class="row">
-                        <?php if ($asso['Association']['photo'] != "") echo $this->Html->image($asso['Association']['photo'], array('alt' => 'photo_profil', 'class' => 'img-circle')); ?>
+                    	<div class="col-md-2 text-center col-md-offset-5">
+                        	<?php if ($asso['Association']['photo'] != "") echo $this->Html->image($asso['Association']['photo'], array('alt' => 'photo_profil', 'class' => 'img-responsive img-circle')); ?>
+                    	</div>
                     </div>
                 </div>
 
@@ -85,7 +87,7 @@
                             <?php echo $this->Html->link(
                                 'Ajouter aux favoris',
                                 array('controller' => 'donneurs', 'action' => 'saveFavori', $asso['Association']['id']),
-                                array('class' => 'btn btn-lg btn-block btn-primary active')
+                                array('class' => 'btn btn-primary')
                             );
                             ?>
 
@@ -95,17 +97,20 @@
                             <?php echo $this->Html->link(
                                 'Faire un don',
                                 array('controller' => 'dons', 'action' => 'donUnique', $asso['Association']['id']),
-                                array('class' => 'btn btn-lg btn-block btn-success active')
+                                array('class' => 'btn btn-success')
                             );
                             ?>
 
                         </div>
 
                     </div>
-
+					
                 <?php } ?>
-
-                <br />
+               <div class="row">
+                	<div class="col-md-12 text-center">
+						<hr />
+                	</div>
+                </div>
 				<div class="row">
                 	<div class="col-md-12 text-center">
                     	<?php echo $this->Html->link('Retour à la liste des associations', array('action' => 'index'), array('class' => 'btn btn-default')); ?>
