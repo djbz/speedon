@@ -1,24 +1,26 @@
+<br />
 <div class="container">
-
-
-    <?php echo $this->Form->create(false, array('type' => 'post', 'class' => 'navbar-form navbar-right', 'role' => 'search')); ?>
-    <div class="form-group">
-        <?php echo $this->Form->input('nomAsso', array('label' => false, 'class' => 'form-control', 'placeholder' => 'Nom Association')); ?>
-    </div>
-    <button type="submit" class="btn btn-default">Rechercher</button>
-    <?php echo $this->Form->end(); ?>
+    
+    
 
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
 
                 <div class="panel-heading ">
-                    <h1>Associations speedon</h1>
+                    <h5 class="text-center">Les associations</h5>
                 </div>
 
                 <div class="panel-body">
-
-                    <?php foreach ($assos as $asso) { ?>
+					<?php echo $this->Form->create(false, array('type' => 'post', 'class' => 'navbar-form navbar-right', 'role' => 'search')); ?>
+    					<div class="form-group">
+        			<?php echo $this->Form->input('nomAsso', array('label' => false, 'class' => 'form-control', 'placeholder' => 'Nom de l\'association')); ?>
+   				</div>
+    			<button type="submit" class="btn btn-default">Rechercher</button>
+   				 <?php echo $this->Form->end(); ?>
+                    
+					<?php if(count($assos) == 0){ echo "Aucune association pour le moment."; }else{ ?>
+					<?php  foreach ($assos as $asso) { ?>
                         <a href="<?php echo $this->Html->url(array('controller' => 'Associations', 'action' => 'view',$asso['Association']['id'] )); ?>">
                         <div class="panel panel-info col-md-4 col-md-offset-1">
                             <div class="panel-heading">
@@ -29,12 +31,10 @@
                             </div>
                         </div>
                         </a>
-                    <?php } ?>
+                    <?php } } ?>
 
                 </div>
 
             </div>
         </div>
     </div>
-
-</div>

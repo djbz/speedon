@@ -55,7 +55,7 @@ class UsersController extends AppController {
 
     public function delete($id = null) {
         $this->request->onlyAllow('post');
-
+	
         $this->User->id = $id;
         if (!$this->User->exists()) {
             throw new NotFoundException(__('User invalide'));
@@ -70,7 +70,15 @@ class UsersController extends AppController {
 	
     public function add() {
         if ($this->request->is('post')) {
-            $this->User->create();
+            
+			$existingUser = $this->User->findByUsername($this->request->data['User']['username']);
+			
+			if(!empty($existingUser)){
+				$this->Session->setFlash(__('<div class="col-md-10 col-md-offset-1 alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>Attention!</strong> Ce nom d\'utilisateur est déjà utilisé.</div>'));
+				return;
+			}
+			
+			$this->User->create();
 			
 			if($this->request->data['User']['password'] == $this->request->data['User']['repassword']){ 
 			

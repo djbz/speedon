@@ -12,6 +12,11 @@
  */
 class AssociationsController extends AppController {
 
+	
+	public function beforeFilter() {
+        parent::beforeFilter();
+        $this->Auth->allow('add');
+    }
 
     public function index(){
         if($this->request->is('post') && !empty($this->request->data['nomAsso'])){
