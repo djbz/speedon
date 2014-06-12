@@ -1,6 +1,2 @@
-<<<<<<< HEAD
-1402225442
-=======
-1402408996
->>>>>>> 972ddb96912709141c3750b61992abdf3932fc48
+1402432532
 a:3:{s:2:"id";a:5:{s:4:"type";s:7:"integer";s:4:"null";b:0;s:7:"default";N;s:6:"length";i:11;s:3:"key";s:7:"primary";}s:10:"donneur_id";a:5:{s:4:"type";s:7:"integer";s:4:"null";b:0;s:7:"default";N;s:6:"length";i:11;s:3:"key";s:5:"index";}s:14:"association_id";a:5:{s:4:"type";s:7:"integer";s:4:"null";b:0;s:7:"default";N;s:6:"length";i:11;s:3:"key";s:5:"index";}}
