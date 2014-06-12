@@ -1,18 +1,15 @@
-<!-- Fichier : /app/View/Donneurs/view.ctp -->
-
-
 <br />
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading text-center">
-                    <h1><?php echo h($donneur['User']['username']); ?></h1>
+                    <h5><?php echo 'Profil de '.h($donneur['User']['username']); ?></h5>
                     <div class="row">
                         <?php if($donneur['Donneur']['photo'] != "") echo $this->Html->image($donneur['Donneur']['photo'], array('alt' => 'photo_profil', 'class' => 'img-circle')); ?>
                     </div>
                 </div>
-                <?php if($donneur['User']['id'] == $this->Session->read('Auth.User.id')){//si le donneur consulte SON PROFIL
+                <?php if($donneur['User']['id'] == $this->Session->read('Auth.User.id')){
                         echo '<div class="col-md-8">';
                     }
                     else {
@@ -20,11 +17,11 @@
                     }  
                 ?>
                     <div class="row">
-                        <div class="col-md-offset-1"><h2>TOTAL DES DONS : <b><?php echo $totalDon; ?>€</b></h2></div>
+                        <div class="col-md-offset-1"><h5>Total des dons : <b><?php echo $totalDon; ?>€</b></h5></div>
                     </div>
 
                     <div class="row">
-                       <div class="col-md-offset-1"><h2>RECOMPENSES</h2></div>
+                       <div class="col-md-offset-1"><h5>Récompenses</h5></div>
                     </div>
                 
                     <div class="row">
@@ -47,7 +44,7 @@
                     <div style="clear:both;"></div>
 
                     <div class="row">
-                       <div class="col-md-offset-1"><h2>ASSOCIATIONS FAVORITES</h2></div>
+                       <div class="col-md-offset-1"><h5>Associations favorites</h5></div>
                     </div>
                     
                     <div class="row">
@@ -57,7 +54,7 @@
                                         foreach($donneur['Association'] as $asso){
                                                 echo '<span style="margin-right:10px;">' . $this->Html->link($asso['nom_asso'],
                                             array('controller' => 'associations', 'action' => 'view', $asso['id']),
-                                            array('class' => 'btn btn-lg btn-success active')) . '</span>'; // TODO : ADAPTER POUR LINKER VERS LA DESCRIPTION LONGUE D'UNE ASSSO
+                                            array('class' => 'btn btn btn-success')) . '</span>'; 
                                         }
                                     
                                      } else{
@@ -73,7 +70,7 @@
                             <?php echo $this->Html->link(
                                    'Consulter mes dons',
                                    array('action' => 'view_dons', $donneur['Donneur']['id']),
-                                   array('class' => 'btn btn-lg btn-block btn-success active')
+                                   array('class' => 'btn btn btn-success')
                                 );
                             ?>
                             </div>
@@ -143,7 +140,7 @@
                             <?php echo $this->Html->link(
                                         'Modifier',
                                         array('action' => 'edit', $donneur['Donneur']['id']),
-                                        array('class' => 'btn btn-lg btn-block btn-warning active')
+                                        array('class' => 'btn btn btn-warning')
                                      );
                                 ?>
                         </div>
@@ -164,7 +161,14 @@
                     </div>
                 <?php     }
                 ?>
+                
+                <div class="row">
+                	<div class="col-md-12 text-center">
+                    	<?php echo $this->Html->link('Retour à la liste des donneurs', array('action' => 'index'), array('class' => 'btn btn-default')); ?>
+                    </div>
+                </div>
+
+                <br />
             </div>
         </div>
     </div>
-</div>

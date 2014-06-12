@@ -21,9 +21,13 @@ class User extends AppModel {
             )
         )
     );
+	
     public $hasOne = array(
         'Donneur' => array(
             'className'     => 'Donneur',
+        ),
+		'Association' => array(
+            'className'     => 'Association',
         )
     );
 	

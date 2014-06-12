@@ -8,16 +8,23 @@
             <div class="panel panel-default">
 
                 <div class="panel-heading ">
-                    <h5 class="text-center">Les associations</h5>
+                    <h5 class="text-center">Nos associations</h5>
                 </div>
 
                 <div class="panel-body">
-					<?php echo $this->Form->create(false, array('type' => 'post', 'class' => 'navbar-form navbar-right', 'role' => 'search')); ?>
-    					<div class="form-group">
-        			<?php echo $this->Form->input('nomAsso', array('label' => false, 'class' => 'form-control', 'placeholder' => 'Nom de l\'association')); ?>
-   				</div>
-    			<button type="submit" class="btn btn-default">Rechercher</button>
-   				 <?php echo $this->Form->end(); ?>
+					<div class="row">
+        				<div class="col-md-12">
+							<?php echo $this->Form->create(false, array('type' => 'post', 'class' => 'navbar-form navbar-right', 'role' => 'search')); ?>
+    						<div class="form-group">
+        						<?php echo $this->Form->input('nomAsso', array('label' => false, 'class' => 'form-control', 'placeholder' => 'Nom de l\'association')); ?>
+                            </div>
+                            <button type="submit" class="btn btn-default">Rechercher</button>
+                            <?php echo $this->Form->end(); ?>
+                        </div>
+                    </div>
+                    <hr />
+    					
+   				 
                     
 					<?php if(count($assos) == 0){ echo "Aucune association pour le moment."; }else{ ?>
 					<?php  foreach ($assos as $asso) { ?>

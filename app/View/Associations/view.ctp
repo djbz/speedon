@@ -6,7 +6,7 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading text-center">
-                    <h1><?php echo h($asso['Association']['nom_asso']); ?></h1>
+                    <h5><?php echo h($asso['Association']['nom_asso']); ?></h5>
 
                     <div class="row">
                         <?php if ($asso['Association']['photo'] != "") echo $this->Html->image($asso['Association']['photo'], array('alt' => 'photo_profil', 'class' => 'img-circle')); ?>
@@ -68,7 +68,7 @@
                             <?php echo $this->Html->link(
                                 'Modifier',
                                 array('action' => 'edit', $asso['Association']['id']),
-                                array('class' => 'btn btn-lg btn-block btn-warning active')
+                                array('class' => 'btn btn btn-warning')
                             );
                             ?>
 
@@ -105,11 +105,17 @@
 
                 <?php } ?>
 
+                <br />
+				<div class="row">
+                	<div class="col-md-12 text-center">
+                    	<?php echo $this->Html->link('Retour à la liste des associations', array('action' => 'index'), array('class' => 'btn btn-default')); ?>
+                    </div>
+                </div>
 
-
-                <div class="row"><br/></div>
+                <br />
+			
 
             </div>
         </div>
     </div>
-</div>
+

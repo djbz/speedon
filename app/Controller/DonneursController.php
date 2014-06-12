@@ -99,6 +99,7 @@ class DonneursController extends AppController {
         if(!$this->request->data){
             $this->request->data = $donneur;
         }
+		$this->set('donneur_id', $id);
     }
 	
 	public function saveFavori($id = null){  
@@ -164,6 +165,7 @@ class DonneursController extends AppController {
             $dons = $this->paginate('Don');
        
             $this->set('dons', $dons);
+			$this->set('donneur_id', $id);
          }
                  
     } 

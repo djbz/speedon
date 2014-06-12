@@ -57,10 +57,10 @@ class AssociationsController extends AppController {
 			
             if ($this->Association->save($this->request->data)) {
             	
-                $this->Session->setFlash(__('Félicitation votre compte a bien été créé !'));
-            	$this->redirect(array('action' => 'view',$this->Association->id));
+				$this->Session->setFlash(__('<div class="col-md-10 col-md-offset-1 alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>Félicitation!</strong> Votre compte a bien été créé !</div>'));
+            	$this->redirect(array('controller' => 'users', 'action' => 'login'));
             } else {
-                $this->Session->setFlash(__('Nous sommes désolé, une erreur est survenue. Merci de réessayer.'));
+				$this->Session->setFlash(__('<div class="col-md-10 col-md-offset-1 alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>Attention!</strong> Une erreur est survenue lors de votre inscription !</div>'));
             }
         }
     }
@@ -88,10 +88,10 @@ class AssociationsController extends AppController {
                 echo "False";
 
             if($this->Association->save($this->request->data)){
-                $this->Session->setFlash(__('L\'association a été modifié'));
+				$this->Session->setFlash(__('<div class="col-md-10 col-md-offset-1 alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>Félicitation!</strong>Votre compte a bien été modifée !</div>'));
                 return $this->redirect(array('controller'=>'associations','action' => 'view',$id));
             }
-            $this->Session->setFlash(__('Impossible de modifier l\'association'));
+				$this->Session->setFlash(__('<div class="col-md-10 col-md-offset-1 alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>Attention!</strong>Une erreure est survenue lors de la modification de votre compte !</div>'));
         }
 
         if(!$this->request->data){
