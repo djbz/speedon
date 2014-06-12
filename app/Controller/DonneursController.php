@@ -31,16 +31,27 @@ class DonneursController extends AppController {
     public $paginate = array(
             'limit' => 5,
             'order' => array(
-        'Donneur.username' => 'asc'
+                'User.username' => 'asc'
             ),
             'paramType' => 'querystring'
     );
 	
     public function index(){
-		$donneurs = $this->paginate('Donneur');
-		foreach($donneurs as  $key => $donneur)
-			$donneurs[$key]['Donneur']['total_don'] = totalDon($donneur);
-        $this->set('donneurs', $donneurs);
+       
+        if($this->request->is('post') && !empty($this->request->data['username'])){
+            $this->loadModel('User');
+            $username = $this->request->data['username'];
+            $this->paginate = array('conditions' => array("User.username LIKE" => "%$username%"));
+            $donneurs = $this->paginate();
+        }else{
+            $donneurs = $this->paginate('Donneur');
+     
+        }
+  
+        foreach($donneurs as  $key => $donneur)
+                $donneurs[$key]['Donneur']['total_don'] = totalDon($donneur);
+         $this->set('donneurs', $donneurs);
+
     }
     
     public function view($id = null){

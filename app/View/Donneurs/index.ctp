@@ -2,12 +2,22 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2 text-center">
             <div class="panel panel-default">
-                <div class="panel-heading "><h( class="text-center">Nos donneurs</h5></div>
+                <div class="panel-heading "><h5 class="text-center">Nos donneurs</h5></div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <?php echo $this->Form->create(false, array('type' => 'post', 'class' => 'navbar-form navbar-right', 'role' => 'search')); ?>
+                            <div class="form-group">
+                                                    <?php echo $this->Form->input('username', array('label' => false, 'class' => 'form-control', 'placeholder' => 'Nom de l\'utilisateur')); ?>
+                            </div>
+                            <button type="submit" class="btn btn-default">Rechercher</button>
+                            <?php echo $this->Form->end(); ?>
+                        </div>
+                    </div>
                     <table class="table table-hover">
                         <tr>
-                        <th class="text-center"><h5><?php echo $this->Paginator->sort('Donneur.username','Login'); ?></h5></th>
+                        <th class="text-center"><h5><?php echo $this->Paginator->sort('User.username','Login'); ?></h5></th>
                                     <th class="text-center"><h5><?php echo 'Total des dons'; ?></h5></th>
-                        </tr>
+                        </tr>     
                         <?php foreach($donneurs as $donneur): ?>
                         <tr>
                             <td>
