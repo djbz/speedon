@@ -5,13 +5,13 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading text-center"><h1>Modifier ses informations</h1></div>
+                <div class="panel-heading text-center"><h5>Modifier ses informations</h5></div>
                 <div style="color : black; text-align:justify"  class="panel-body">
                     <div class="container col-md-12">    
                     
                         <div class="row">
                             <div class="col-md-12">
-                        <?php // RAJOUTER CONTRAINTES
+                        <?php 
                             echo $this->Form->create('Donneur'); ?>
                             </div>
                         </div>      
@@ -122,11 +122,12 @@
                           <div class="col-md-12 text-center">
                                 <input type="submit" class="btn btn-success span12" value="Sauvegarder"/>
                                 <?php echo $this->Form->end(); ?>
+                                <?php echo $this->Html->link('Retour', array('action' => 'view', $donneur_id), array('class' => 'btn btn-warning')); ?>
                            </div>
                         </div>
                     </div>    
                 </div>
             </div>
         </div>
-    </div>
+  
 </div>	

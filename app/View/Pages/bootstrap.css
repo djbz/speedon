@@ -7117,27 +7117,15 @@ td.visible-print {
   }
 }
 
-body{
+#clouds{
   padding: 0px 0;
-background: #ddffea; /* Old browsers */
-
-background: -moz-linear-gradient(left,  #ddffea 0%, #eaf5ff 56%, #eaf5ff 100%); /* FF3.6+ */
-
-background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ddffea), color-stop(56%,#eaf5ff), color-stop(100%,#eaf5ff)); /* Chrome,Safari4+ */
-
-background: -webkit-linear-gradient(left,  #ddffea 0%,#eaf5ff 56%,#eaf5ff 100%); /* Chrome10+,Safari5.1+ */
-
-background: -o-linear-gradient(left,  #ddffea 0%,#eaf5ff 56%,#eaf5ff 100%); /* Opera 11.10+ */
-
-background: -ms-linear-gradient(left,  #ddffea 0%,#eaf5ff 56%,#eaf5ff 100%); /* IE10+ */
-
-background: linear-gradient(to right,  #ddffea 0%,#eaf5ff 56%,#eaf5ff 100%); /* W3C */
-
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ddffea', endColorstr='#eaf5ff',GradientType=1 ); /* IE6-9 */
-
-
-
+  background: #c9dbe9;
+  background: -webkit-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+  background: -linear-gradient(top, #c9dbe9 0%, #fff 100%);
+  background: -moz-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+  background: -ms-linear-gradient(top, #c9dbe9 0%, #fff 100%);
 }
+
 
 .cloud {
   width: 200px; height: 60px;

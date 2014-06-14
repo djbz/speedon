@@ -7,6 +7,11 @@ class ContactController extends AppController {
 	 public function index() {
 
 		}
+		
+	public function beforeFilter() {
+        parent::beforeFilter();
+        $this->Auth->allow('send','index');
+    }
 
 	public function send() {
 		$nom = $_POST["nom"];

@@ -26,6 +26,13 @@ class Association extends AppModel{
                 'unique' => false, // attention sinon, 1 seul donneur pour une seule asso
             )
     );
+
+    public $belongsTo = array(
+        'User' => array(
+            'className'     => 'User',
+            'foreignKey' => 'user_id'
+        )
+    );
 }
 
 ?>

@@ -1,20 +1,23 @@
-<!-- File: /app/View/Donneurs/index.ctp -->
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2 text-center">
             <div class="panel panel-default">
-                <div class="panel-heading "><h1>Donneurs speedon</h1></div>
+                <div class="panel-heading "><h5 class="text-center">Nos donneurs</h5></div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <?php echo $this->Form->create(false, array('type' => 'post', 'class' => 'navbar-form navbar-right', 'role' => 'search')); ?>
+                            <div class="form-group">
+                                                    <?php echo $this->Form->input('username', array('label' => false, 'class' => 'form-control', 'placeholder' => 'Nom de l\'utilisateur')); ?>
+                            </div>
+                            <button type="submit" class="btn btn-default">Rechercher</button>
+                            <?php echo $this->Form->end(); ?>
+                        </div>
+                    </div>
                     <table class="table table-hover">
                         <tr>
-                        <th class="text-center"><h4><?php echo $this->Paginator->sort('Donneur.username','Login'); ?></h4></th>
-                                    <th class="text-center"><h4><?php echo 'Total des dons'; // echo $this->Paginator->sort('Donneur.total_don','Total des dons'); ?></h4></th>
-                            <!-- rajouter total des dons etc..)-->
-                            <!--<th>Prénom</th>
-                            <th>Nom</th>
-                            <th>Mail</th>
-                            <th>Adresse</th>
-                            <th>Numéro Tel</th>-->
-                        </tr>
+                        <th class="text-center"><h5><?php echo $this->Paginator->sort('User.username','Login'); ?></h5></th>
+                                    <th class="text-center"><h5><?php echo 'Total des dons'; ?></h5></th>
+                        </tr>     
                         <?php foreach($donneurs as $donneur): ?>
                         <tr>
                             <td>
@@ -24,29 +27,28 @@
                                     <td>
                                 <?php echo $donneur['Donneur']['total_don'];?>
                             </td>
-                                    <!-- A AFFICHER ??? CONFIDENTIEL ?-->
-                            <!--<td><?php echo $donneur['Donneur']['prenom']; ?></td>
-                            <td><?php echo $donneur['Donneur']['nom']; ?></td>
-                            <td><?php echo $donneur['Donneur']['mail']; ?></td>
-                            <td><?php echo $donneur['Donneur']['adresse_postale']; ?></td>
-                            <td><?php echo $donneur['Donneur']['numero_tel']; ?></td>-->
                         </tr>
                         <?php 
                                     endforeach;
                                     unset($donneur);
                             ?>
                     </table>
+                    <hr />
                     <?php	
                             echo $this->Paginator->prev('Donneurs précédents') . '&nbsp;'. '&nbsp;';
                             echo $this->Paginator->numbers() . '&nbsp;'. '&nbsp;';
                             echo $this->Paginator->next('Donneurs suivants');
-                       
-                            echo '<br/><br/><h4>' . $this->Html->link("GENERATION DES DONS MENSUELS", 
-                                                        array('controller' => 'donneurs','action'=> 'activationMensuelleDons'),
-                                                        array('class' => 'btn btn-lg btn-warning active')) 
-                            . '</h4>';
                     ?>
+                    <hr />
+                    <?php 
+					
+						if($this->Session->read('Auth.User.role') == "Administrateur"){
+                            echo '<h4>' . $this->Html->link("Générer les dons mensuels", 
+                                                        array('controller' => 'donneurs','action'=> 'activationMensuelleDons'),
+                                                        array('class' => 'btn btn-warning')) 
+                            . '</h4>';
+						}
+					?>
             </div>
         </div>
     </div>
-</div>

@@ -30,7 +30,7 @@ class Donneur extends AppModel{
                 'joinTable' => 'donneurs_recompenses',
                 'foreignKey' => 'donneur_id',
                 'associationForeignKey' => 'recompense_id',
-                'unique' => true, // keepExisting ?
+                'unique' => 'keepExisting', // keepExisting ?
             ),
 		'Association' =>
             array(
@@ -38,7 +38,7 @@ class Donneur extends AppModel{
                 'joinTable' => 'associations_donneurs',
                 'foreignKey' => 'donneur_id',
                 'associationForeignKey' => 'association_id',
-                'unique' => true, // keepExisting ?
+                'unique' => 'keepExisting', // keepExisting ?
             )
     );
 

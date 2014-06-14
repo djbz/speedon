@@ -1,4 +1,4 @@
-<!-- File: /app/View/Donneurs/index.ctp -->
+<!-- File: /app/View/Associations/view_dons.ctp -->
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2 text-center">
@@ -17,7 +17,7 @@
                                     <?php echo strftime("%d/%m/%Y<br/>%H:%M", strtotime($don['Don']['date'])); ?>
                                 </td>
                                 <td>
-                                    <?php echo $this->Html->link($don['Association']['nom_asso'],
+                                    <?php echo $this->Html->link($don['Donneur']['nom'],
                                             array('controller' => 'associations', 'action' => 'view', $don['Don']['association_id'])); ?>
                                 </td>
                                 <td>
@@ -36,7 +36,7 @@
                             echo $this->Paginator->numbers() . '&nbsp;'. '&nbsp;';
                             echo $this->Paginator->next('Dons suivants'); 
 							echo '<hr />';
-							echo $this->Html->link('Retour', array('action' => 'view', $donneur_id), array('class' => 'btn btn-success'));
+							echo $this->Html->link('Retour', array('action' => 'view', $asso_id), array('class' => 'btn btn-success'));
                     		echo '<hr />';
                     ?>
               

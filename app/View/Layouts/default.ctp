@@ -41,7 +41,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#about">À propos</a></li>
+            <li><?php echo $this->Html->link('À propos',array('controller' => 'pages', 'action' => 'display','apropos')); ?></li>
             <li><?php echo $this->Html->link('Les associations',array('controller' => 'associations', 'action' => 'index')); ?></li>
             <li><?php echo $this->Html->link('Les donneurs',array('controller' => 'donneurs', 'action' => 'index')); ?></li>
             <li><?php echo $this->Html->link('FAQ',array('controller' => 'FAQ', 'action' => 'index')); ?></li>

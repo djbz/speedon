@@ -3,6 +3,11 @@
 // app/Controller/DonneursController.php
 class DonneursController extends AppController {
 
+	public function beforeFilter() {
+        parent::beforeFilter();
+        $this->Auth->allow('add');
+    }
+
     public function add($idUser) {
         if ($this->request->is('post')) {
             $this->Donneur->create();
@@ -15,10 +20,10 @@ class DonneursController extends AppController {
 
             if ($this->Donneur->save($this->request->data)) {
 
-                $this->Session->setFlash(__('Félicitation votre compte a bien été créé !'));
-                $this->redirect(array('action' => 'view',$this->Donneur->id));
+				$this->Session->setFlash(__('<div class="col-md-10 col-md-offset-1 alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>Félicitation!</strong> Votre compte a bien été créé. Vous pouvez désormais vous connecter.</div>'));
+                $this->redirect(array('controller' => 'users', 'action' => 'login'));
             } else {
-                $this->Session->setFlash(__('Nous sommes désolé, une erreur est survenue. Merci de réessayer.'));
+               	$this->Session->setFlash(__('<div class="col-md-10 col-md-offset-1 alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>Attention!</strong> Une erreur est survenue merci de réessayer.</div>'));
             }
         }
     }
@@ -26,16 +31,27 @@ class DonneursController extends AppController {
     public $paginate = array(
             'limit' => 5,
             'order' => array(
-        'Donneur.username' => 'asc'
+                'User.username' => 'asc'
             ),
             'paramType' => 'querystring'
     );
 	
     public function index(){
-		$donneurs = $this->paginate('Donneur');
-		foreach($donneurs as  $key => $donneur)
-			$donneurs[$key]['Donneur']['total_don'] = totalDon($donneur);
-        $this->set('donneurs', $donneurs);
+       
+        if($this->request->is('post') && !empty($this->request->data['username'])){
+            $this->loadModel('User');
+            $username = $this->request->data['username'];
+            $this->paginate = array('conditions' => array("User.username LIKE" => "%$username%"));
+            $donneurs = $this->paginate();
+        }else{
+            $donneurs = $this->paginate('Donneur');
+     
+        }
+  
+        foreach($donneurs as  $key => $donneur)
+                $donneurs[$key]['Donneur']['total_don'] = totalDon($donneur);
+         $this->set('donneurs', $donneurs);
+
     }
     
     public function view($id = null){
@@ -70,7 +86,7 @@ class DonneursController extends AppController {
             $this->Donneur->id = $id;
             if($this->Donneur->save($this->request->data)){
               
-			  	$this->Session->setFlash(__('Votre profil a été modifié'));
+			  	$this->Session->setFlash(__('<div class="col-md-10 col-md-offset-1 alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>Félicitation!</strong> Votre profil a été modifié.</div>'));
 			  
 			  	$this->loadModel('User');
 				$user = $this->User->findById($donneur['User']['id']);
@@ -82,18 +98,19 @@ class DonneursController extends AppController {
 					//pr($user);
 				}
 				else{
-					$this->Session->setFlash(__('Le mot de passe n\'a pas été modifié'));
+					//$this->Session->setFlash(__('<div class="col-md-10 col-md-offset-1 alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>Attention!</strong> Votre mot de passe n\'a pas été modifié.</div>'));
 				}
 				
 			  
                 //return $this->redirect(array('action' => 'index'));
                 return $this->redirect(array('controller'=>'donneurs','action' => 'view',$id));
             }
-            $this->Session->setFlash(__('Impossible de modifier le profil'));
+            	$this->Session->setFlash(__('<div class="col-md-10 col-md-offset-1 alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>Attention!</strong> Une erreur est survenue merci de réessayer.</div>'));
         }
         if(!$this->request->data){
             $this->request->data = $donneur;
         }
+		$this->set('donneur_id', $id);
     }
 	
 	public function saveFavori($id = null){  
@@ -108,7 +125,7 @@ class DonneursController extends AppController {
                     'Association' => array ('id' => $id)
             ));
             $this->Donneur->Association->create();
-            $this->Session->setFlash(__('Cette association a été ajouté à vos favoris'));
+            $this->Session->setFlash(__('<div class="col-md-10 col-md-offset-1 alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>Félicitation!</strong> L\'association a été ajoutée à vos favoris.</div>'));
             return $this->redirect(array('controller'=>'associations','action' => 'view', $id));
 	}
 	
@@ -135,7 +152,7 @@ class DonneursController extends AppController {
 				}
 			}
 		}
-		$this->Session->setFlash(__('Génération des dons mensuels confirmée.'));
+		$this->Session->setFlash(__('<div class="col-md-10 col-md-offset-1 alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>Félicitation!</strong> Le don mensuel a été activé.</div>'));
 		return $this->redirect(array('controller'=>'donneurs','action' => 'index'));
 	}
         
@@ -159,6 +176,7 @@ class DonneursController extends AppController {
             $dons = $this->paginate('Don');
        
             $this->set('dons', $dons);
+			$this->set('donneur_id', $id);
          }
                  
     } 
