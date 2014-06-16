@@ -618,3 +618,39 @@ Request URL: /speedon/css/bootstrap-responsive.css
 Stack Trace:
 #0 /Applications/MAMP/htdocs/speedon/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2014-06-16 11:18:55 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /speedon/css/bootstrap-responsive.css
+Stack Trace:
+#0 /Applications/MAMP/htdocs/speedon/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-16 11:18:55 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /speedon/css/ui-lightness.jquery-ui-1.10.3.css
+Stack Trace:
+#0 /Applications/MAMP/htdocs/speedon/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-16 11:18:56 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /speedon/css/bootstrap-responsive.css
+Stack Trace:
+#0 /Applications/MAMP/htdocs/speedon/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-16 11:18:56 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /speedon/css/ui-lightness.jquery-ui-1.10.3.css
+Stack Trace:
+#0 /Applications/MAMP/htdocs/speedon/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
