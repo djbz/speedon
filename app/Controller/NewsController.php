@@ -31,7 +31,7 @@ class NewsController extends AppController {
             $this->News->create();
             if ($this->News->save($this->request->data)) {
                 $this->Session->setFlash(__('Votre post à été sauvegardé avec succès !'));
-                return $this->redirect(array('action' => 'index'));
+                return $this->redirect(array('action' => 'manage'));
             }
             $this->Session->setFlash(__('Erreur'));
         }
@@ -51,7 +51,7 @@ class NewsController extends AppController {
             $this->News->id = $id;
             if ($this->News->save($this->request->data)) {
                 $this->Session->setFlash(__('Votre post à été modifiée avec succès'));
-                return $this->redirect(array('action' => 'index'));
+                return $this->redirect(array('action' => 'manage'));
             }
             $this->Session->setFlash(__('Impossible de mettre à jour le post'));
         }
@@ -69,7 +69,7 @@ class NewsController extends AppController {
             $this->Session->setFlash(
                 __('Le post avec id : %s a été supprimé.', h($id))
             );
-            return $this->redirect(array('action' => 'index'));
+            return $this->redirect(array('action' => 'manage'));
         }
     }
     

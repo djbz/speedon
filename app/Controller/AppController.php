@@ -42,7 +42,7 @@ class AppController extends Controller {
 
     public function beforeFilter() {
         $this->loadModel('News');
-        $this->set('news', $this->News->find('all',array('limit' => '3')));
+        $this->set('news', $this->News->find('all',array('limit' => '3','order' => array('date' => 'desc'))));
         $this->Auth->allow('index', 'view');
       
 

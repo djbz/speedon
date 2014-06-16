@@ -45,9 +45,9 @@
             <div class="col-lg-10 col-md-offset-2 well">
                 <?php echo '<h4>'.$this->Html->link($new['News']['titre'], array('controller' => 'news', 'action' => 'view', $new['News']['id']), array('class' => 'col-md-12 text-center', 'style' => 'text-decoration:none;')).'</h4>'; ?>
                 <?php 
-                //if(!empty(trim($new['News']['img']))){
-                    echo '<div class="col-md-4">' . $this->Html->image('http://www.zastavki.com/pictures/2560x1600/2011/Nature_Clouds_Sunshine_028618_.jpg', array('class' => 'img-responsive img-thumbnail')) . '</div>';
-                //}
+                if(!empty(trim($new['News']['img']))){
+                    echo '<div class="col-md-4">' . $this->Html->image($new['News']['img'], array('class' => 'img-responsive img-thumbnail')) . '</div>';
+                }
                 echo '<br/><br/><div style="text-align:justify; margin: 5px 70px 5px 70px;">'.$new['News']['texte'].'</div><br/><br/>';
                 echo '<br/><span style="color:grey;position:absolute; bottom:0;  margin-bottom:7px; margin:7px; right: 0;"><small>'.strftime("%d/%m/%Y %H:%M", strtotime($new['News']['date'])).'</small></span>';
                  ?>
