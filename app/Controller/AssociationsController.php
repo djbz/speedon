@@ -68,7 +68,17 @@ class AssociationsController extends AppController {
 
 
     public function edit($id = null){
-
+		
+		if($this->Session->read('Auth.User.role') != "Association"){
+			$this->Session->setFlash(__('<div class="col-md-10 col-md-offset-1 alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>Attention!</strong> Accès interdit !</div>'));
+			return $this->redirect(array('controller'=>'pages','action' => 'display','home'));
+		}
+		
+		if($this->Session->read('Auth.User.Association.id') != $id){
+			$this->Session->setFlash(__('<div class="col-md-10 col-md-offset-1 alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>Attention!</strong> Accès interdit !</div>'));
+			return $this->redirect(array('controller'=>'pages','action' => 'display','home'));
+		}
+		
         if(!$id){
             throw new NotFoundException(__('Association invalide'));
         }

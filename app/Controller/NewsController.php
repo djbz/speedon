@@ -65,5 +65,9 @@ class NewsController extends AppController {
             return $this->redirect(array('action' => 'index'));
         }
     }
+    
+    public function manage() {
+        $this->set('news', $this->News->find('all'));
+    }
 }
 ?>

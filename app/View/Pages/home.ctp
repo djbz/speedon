@@ -13,6 +13,9 @@
 </head>
 
 <body>
+    <?php 
+        echo $this->element('index-news', array('news' => $news));
+    ?>
   <div class="container">
       <div class="row">
         <div class="col-md-4">

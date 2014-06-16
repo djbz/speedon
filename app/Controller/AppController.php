@@ -35,13 +35,17 @@ class AppController extends Controller {
 	public $components = array(
         'Session',
         'Auth' => array(
-            'loginRedirect' => array('controller' => 'pages', 'action' => 'display', 'home'),
+            'loginRedirect' => array('controller' => 'associations', 'view', '1'),
             'logoutRedirect' => array('controller' => 'pages', 'action' => 'display', 'home')
         )
     );
 
     public function beforeFilter() {
+        $this->loadModel('News');
+        $this->set('news', $this->News->find('all',array('limit' => '3')));
         $this->Auth->allow('index', 'view');
+      
+
     }
 	
 	
