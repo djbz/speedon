@@ -55,10 +55,10 @@ $cakeDescription = __d('Speedon', 'Speedon : Le site de don facile et rapide !')
 			echo $this->Html->link('Se connecter',array('controller' => 'users', 'action' => 'login'),array('class' => 'btn btn-success', 'target' => '_blank')); 
 			}else{
 				if($this->Session->read('Auth.User.role') == "Association"){
-					echo "Bonjour <b>".$this->Html->link($this->Session->read('Auth.User.username'),array('controller' => 'associations', 'action' => 'view',$this->Session->read('Auth.User.id')))."</b>&nbsp;&nbsp;";
+					echo "Bonjour <b>".$this->Html->link($this->Session->read('Auth.User.username'),array('controller' => 'associations', 'action' => 'view',$this->Session->read('Auth.User.Association.id')))."</b>&nbsp;&nbsp;";
 				}
 				if($this->Session->read('Auth.User.role') == "Donneur"){
-					echo "Bonjour <b>".$this->Html->link($this->Session->read('Auth.User.username'),array('controller' => 'donneurs', 'action' => 'view',$this->Session->read('Auth.User.id')))."</b>&nbsp;&nbsp;";
+					echo "Bonjour <b>".$this->Html->link($this->Session->read('Auth.User.username'),array('controller' => 'donneurs', 'action' => 'view',$this->Session->read('Auth.User.Donneur.id')))."</b>&nbsp;&nbsp;";
 				}
 				if($this->Session->read('Auth.User.role') == "Administrateur"){
 					echo "Administrateur <b>".$this->Html->link($this->Session->read('Auth.User.username'),array('controller' => 'administrateurs', 'action' => 'manage'))."</b>&nbsp;&nbsp;";

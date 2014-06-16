@@ -63,6 +63,8 @@
                 </div>
 
                 <?php if($this->Session->read('Auth.User.role') == 'Association' && $asso['User']['id'] == $this->Session->read('Auth.User.id')){ ?>
+                                   <?php if($totalDon > 0){  ?>
+
                 <div class="panel panel-info col-md-10 col-md-offset-1">
                     <div class="panel-heading">
                         <h3 class="panel-title">Dons</h3>
@@ -92,9 +94,9 @@
                     </div>
 
                 </div>
+                
+<?php } ?>
                 <?php } ?>
-
-
                 <?php if ($this->Session->read('Auth.User.role') == 'Association' && $this->Session->read('Auth.User.id') == $asso['User']['id']) { ?>
 
                     <div class="row text-center">

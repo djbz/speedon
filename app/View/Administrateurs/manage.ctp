@@ -10,7 +10,7 @@
                         	<div class="col-md-12 text-center">
                             	<?php echo $this->Html->Link('Gérer les news',array('controller'=>'News','action'=>'manage'),array('class' => 'btn btn-default'));  ?>
                            		<?php echo $this->Html->Link('Gérer les récompenses',array('controller'=>'Recompenses','action'=>'manage'),array('class' => 'btn btn-default'));  ?>
-								<?php echo $this->Html->Link('Gérer les associations',array('controller'=>'Vendeurs','action'=>'index'),array('class' => 'btn btn-default'));  ?>
+								<?php //echo $this->Html->Link('Gérer les associations',array('controller'=>'Vendeurs','action'=>'index'),array('class' => 'btn btn-default'));  ?>
 							</div>
                         </div>
                    </div>

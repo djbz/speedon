@@ -8,14 +8,14 @@
     				<div class="container col-md-12">
 						<div class="row">
                         	<div class="col-md-12 text-center">
-                            	<?php echo $this->HTML->Link('Créer des récompenses',array('controller'=>'Recompenses','action'=>'add'),array('class' => 'btn btn-default'));  ?>
+                            	<?php echo $this->Html->Link('Créer des récompenses',array('controller'=>'Recompenses','action'=>'add'),array('class' => 'btn btn-default'));  ?>
                            	</div>
                         </div>
                         <br />
                         <div class="row">
                         	<div class="col-md-12 text-center">
-                            	<?php echo $this->HTML->Link('Gérer les associations',array('controller'=>'Associations','action'=>'manage'),array('class' => 'btn btn-default'));  ?>
-                           		<?php echo $this->HTML->Link('Gérer les news',array('controller'=>'News','action'=>'manage'),array('class' => 'btn btn-default'));  ?>
+                            	<?php echo $this->Html->Link('Gérer les associations',array('controller'=>'Associations','action'=>'manage'),array('class' => 'btn btn-default'));  ?>
+                           		<?php echo $this->Html->Link('Gérer les news',array('controller'=>'News','action'=>'manage'),array('class' => 'btn btn-default'));  ?>
                             </div>
                         </div>
                         <br />
@@ -37,7 +37,7 @@
                                             <td><?php echo $recompense['Recompense']['titre']; ?></td>
                                             <td><?php echo $recompense['Recompense']['condition_obtention'].' €'; ?></td>
                                             <td><?php echo $recompense['Administrateur']['prenom']. ' '.$recompense['Administrateur']['nom']; ?></td>
-                                            <td class="text-center"><?php echo $this->HTML->Link('Gérer',array('controller' => 'Recompenses', 'action' => 'edit',$recompense['Recompense']['id']),array());  ?></td>
+                                            <td class="text-center"><?php echo $this->Html->Link('Gérer',array('controller' => 'Recompenses', 'action' => 'edit',$recompense['Recompense']['id']),array());  ?></td>
                                          </tr>   
                                             
                                     
