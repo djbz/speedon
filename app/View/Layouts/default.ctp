@@ -1,5 +1,5 @@
 <?php
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
+$cakeDescription = __d('Speedon', 'Speedon : Le site de don facile et rapide !');
 ?>
 <!DOCTYPE html>
 <html>
@@ -59,6 +59,9 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 				}
 				if($this->Session->read('Auth.User.role') == "Donneur"){
 					echo "Bonjour <b>".$this->Html->link($this->Session->read('Auth.User.username'),array('controller' => 'donneurs', 'action' => 'view',$this->Session->read('Auth.User.id')))."</b>&nbsp;&nbsp;";
+				}
+				if($this->Session->read('Auth.User.role') == "Administrateur"){
+					echo "Administrateur <b>".$this->Html->link($this->Session->read('Auth.User.username'),array('controller' => 'administrateurs', 'action' => 'manage'))."</b>&nbsp;&nbsp;";
 				}
 			echo $this->Html->link('Se deconnecter',array('controller' => 'users', 'action' => 'logout'),array('class' => 'btn btn-default', 'target' => '_blank')); 	
 			}

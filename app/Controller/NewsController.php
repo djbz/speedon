@@ -20,7 +20,14 @@ class NewsController extends AppController {
     }
 
     public function add() {
+		
+		
+		
         if ($this->request->is('post')) {
+			
+			$this->request->data['News']['administrateur_id'] = $this->Session->read('Auth.User.id');
+			$this->request->data['News']['date'] = date('Y-m-d H-i-s');
+			
             $this->News->create();
             if ($this->News->save($this->request->data)) {
                 $this->Session->setFlash(__('Votre post à été sauvegardé avec succès !'));
