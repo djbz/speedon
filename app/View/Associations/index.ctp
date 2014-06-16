@@ -42,6 +42,14 @@
 
                 </div>
 
+                <div class="col-md-offset-4">
+                <?php
+                echo $this->Paginator->prev('Associations précédentes') . '&nbsp;'. '&nbsp;';
+                echo $this->Paginator->numbers() . '&nbsp;'. '&nbsp;';
+                echo $this->Paginator->next('Associations suivantes');
+                ?>
+                </div>
+
             </div>
         </div>
     </div>

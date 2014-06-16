@@ -13,12 +13,12 @@
                     	</div>
                         <?php if($donneur['User']['id'] == $this->Session->read('Auth.User.id')){//si le donneur consulte SON PROFIL?>
                       	<div class="col-md-5">
-                   
+
                             <div class="row">
                                 <div class="col-md-12">
                                     <strong>Nom : </strong><?php echo h($donneur['Donneur']['nom']); ?><br/>
                                 </div>
-                            </div>      
+                            </div>
                             <br/>
                             <div class="row">
                                 <div class="col-md-12">
@@ -45,7 +45,7 @@
                             </div>
                     </div>
                     <div class="col-md-5">
-                    
+
                     <div class="row">
                         <div class="col-md-12">
                             <strong>Don mensuel : </strong><?php echo h($donneur['Donneur']['don_mensuel']) ? "activé" : "désactivé"; ?><br/>
@@ -71,7 +71,7 @@
                     </div>
                     <br />
                     <div class="row">
-                        <div class="col-md-12">      
+                        <div class="col-md-12">
                             <?php echo $this->Html->link(
                                         'Modifier',
                                         array('action' => 'edit', $donneur['Donneur']['id']),
@@ -82,92 +82,92 @@
                     </div>
                  </div>
                  <div class="row">
-                        <div class="col-md-12"> 
+                        <div class="col-md-12">
                              <br />
                              <hr /
                        </div>
                  </div>
-                </div>          
+                </div>
                 <?php } ?>
-                  
+
                 <div class="row">
-                        <div class="col-md-12 text-center"> 
+                        <div class="col-md-12 text-center">
                              <h4>Total des dons : <b><?php echo $totalDon; ?>€</b></h4>
                        </div>
                  </div>
                  <div class="row">
-                        <div class="col-md-12 text-center"> 
+                        <div class="col-md-12 text-center">
                              <h5>Associations favorites : </h5>
                        </div>
                  </div>
                  <div class="row">
-                 	<div class="col-md-12 text-center"> 
+                 	<div class="col-md-12 text-center">
                  	<?php
                     if(count($donneur['Association']) > 0){
                     	$i = 0;
-						foreach($donneur['Association'] as $asso){ 
+						foreach($donneur['Association'] as $asso){
 							if($i == 4){ ?>
 								<div class="row">
 							<?php $i=0; } ?>
                             	<div class="col-md-4 text-center">
-									<?php echo $this->Html->link($asso['nom_asso'],array('controller' => 'associations', 'action' => 'view', $asso['id']),array('class' => 'btn btn-default col-md-12')); ?>            
-								</div>		
+									<?php echo $this->Html->link($asso['nom_asso'],array('controller' => 'associations', 'action' => 'view', $asso['id']),array('class' => 'btn btn-default col-md-12')); ?>
+								</div>
                              <?php if($i == 4){ ?>
 								</div>
 							 <?php $i=0; } $i++; }
-                             if($i!=0){ ?></div><?php }      
+                             if($i!=0){ ?></div><?php }
                     } else{
-                    	echo '<div class="col-md-12 text-center">Aucune association</div>';    
-                    }                
+                    	echo '<div class="col-md-12 text-center">Aucune association</div>';
+                    }
                 	?>
-                    
+
                 	</div>
                 </div>
                 <div class="row">
-                        <div class="col-md-12"> 
+                        <div class="col-md-12">
                              <br />
                              <hr /
                        </div>
                  </div>
-                 
+
                  <div class="row text-center">
                        <div class="col-md-12"><h5>Récompenses</h5></div>
                  </div>
-                
+
                   <div class="row">
-                 		<div class="col-md-12 text-center"> 
-                        
+                 		<div class="col-md-12 text-center">
+
                     <?php
                             if(count($donneur['Recompense']) > 0){
 								$i = 1;
-                                foreach($donneur['Recompense'] as $recompense){ 
+                                foreach($donneur['Recompense'] as $recompense){
 									if($i == 4){ ?>
 									<div class="row">
 									<?php $i=0; } ?>
                                         <div class="col-md-3">
                                         	<?php echo $this->Html->image($recompense['photo'], array('alt' => $recompense['titre'], 'title' => $recompense['titre'], 'class' => 'img-responsive img-thumbnail')); ?>
                                         </div>
-                                        
+
                                 	<?php if($i == 4){ ?>
 									</div>
 									<?php $i=0; } $i++; }
-								
+
                              		if($i!=0){ ?></div><?php }
-							
+
                             		}else{
-                                         echo '<span style="margin-right:10px;">Aucune</span>';    
+                                         echo '<span style="margin-right:10px;">Aucune</span>';
                             		}
                     			?>
                         </div>
                     </div>
                    <div class="row">
-                        <div class="col-md-12"> 
+                        <div class="col-md-12">
                              <br />
                              <hr /
                        </div>
                  	</div>
 
-               
+
                 <div class="row">
                 	<div class="col-md-12 text-center">
                     	<?php if($donneur['User']['id'] == $this->Session->read('Auth.User.id')){ echo $this->Html->link(

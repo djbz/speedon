@@ -23,19 +23,19 @@
                     </div>
                     <div class="panel-body">
                         <div class="row">
-                            <div class="col-md-8 col-md-offset-1">
+                            <div class="col-md-8 col-md-offset-0">
                                 <strong>Nom : </strong><?php echo h($asso['Association']['nom_asso']); ?><br/>
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="col-md-8 col-md-offset-1">
+                            <div class="col-md-8 col-md-offset-0">
                                 <strong>Mail : </strong><?php echo h($asso['Association']['mail']); ?><br/>
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="col-md-8 col-md-offset-1">
+                            <div class="col-md-8 col-md-offset-0">
                                 <strong>Adresse postale
                                     : </strong><?php echo h($asso['Association']['adresse_postale']); ?>
                                 <br/>
@@ -43,7 +43,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-8 col-md-offset-1">
+                            <div class="col-md-8 col-md-offset-0">
                                 <strong>Numéro de téléphone
                                     : </strong><?php echo h($asso['Association']['numero_tel']); ?>
                                 <br/>
@@ -62,6 +62,38 @@
 
                 </div>
 
+                <?php if($this->Session->read('Auth.User.role') == 'Association' && $asso['User']['id'] == $this->Session->read('Auth.User.id')){ ?>
+                <div class="panel panel-info col-md-10 col-md-offset-1">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Dons</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-10">
+                                <strong>Total dons :</strong> <?php echo h($totalDon); ?>
+                            </div>
+                            <div class="col-md-10">
+                                <strong>Dernier :</strong>
+                                <?php echo "Le ".strftime("%d/%m/%Y", strtotime($lastDon['Don']['date']))." par ".$this->Html->link($lastDon['Donneur']['nom'],
+                                    array('controller' => 'donneurs', 'action' => 'view', $lastDon['Donneur']['id']))." d'un montant de ".$lastDon['Don']['montant']." €";
+                                ?>
+
+                            </div>
+                            <div class="col-md-offset-8">
+                                <?php echo $this->Html->link(
+                                    'Consulter dons',
+                                    array('action' => 'view_dons', $asso['Association']['id']),
+                                    array('class' => 'btn btn-success')
+                                );
+                                ?>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <?php } ?>
+
 
                 <?php if ($this->Session->read('Auth.User.role') == 'Association' && $this->Session->read('Auth.User.id') == $asso['User']['id']) { ?>
 
@@ -78,6 +110,8 @@
                     </div>
 
                 <?php } ?>
+
+
 
                 <?php if ($this->Session->read('Auth.User.role') == 'Donneur') { ?>
 

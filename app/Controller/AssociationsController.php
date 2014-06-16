@@ -12,6 +12,14 @@
  */
 class AssociationsController extends AppController {
 
+    public $paginate = array(
+        'limit' => 5,
+        'order' => array(
+            'User.username' => 'asc'
+        ),
+        'paramType' => 'querystring'
+    );
+
 	
 	public function beforeFilter() {
         parent::beforeFilter();
@@ -21,9 +29,12 @@ class AssociationsController extends AppController {
     public function index(){
         if($this->request->is('post') && !empty($this->request->data['nomAsso'])){
             $nomAsso = $this->request->data['nomAsso'];
-            $assos = $this->Association->find('all', array( 'conditions' => array("Association.nom_asso LIKE" => "%$nomAsso%" )));
+            //$assos = $this->Association->find('all', array( 'conditions' => array("Association.nom_asso LIKE" => "%$nomAsso%" )));
+            $this->paginate = array('conditions' => array("Association.nom_asso LIKE" => "%$nomAsso%"));
+            $assos = $this->paginate();
         }else{
-            $assos = $this->Association->find('all');
+            //$assos = $this->Association->find('all');
+            $assos = $this->paginate('Association');
         }
 
         $this->set('assos', $assos);
@@ -44,6 +55,15 @@ class AssociationsController extends AppController {
         }
 
 		$this->set('asso', $asso);
+        $totalDon = $this->totalDon($asso);
+        $this->set('totalDon', $totalDon);
+
+        $this->loadModel('Don');
+        $lastDon = $this->Don->find('first', array('conditions' => array('Don.association_id' => $id), 'order' => array('Don.date' => 'desc')));
+        $this->set('lastDon', $lastDon);
+
+
+
 		
 	}
 
@@ -57,16 +77,16 @@ class AssociationsController extends AppController {
 			
             if ($this->Association->save($this->request->data)) {
             	
-				$this->Session->setFlash(__('<div class="col-md-10 col-md-offset-1 alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>Félicitation!</strong> Votre compte a bien été créé !</div>'));
-            	$this->redirect(array('controller' => 'users', 'action' => 'login'));
+                $this->Session->setFlash(__('Félicitation votre compte a bien été créé !'));
+            	$this->redirect(array('action' => 'view',$this->Association->id));
             } else {
-				$this->Session->setFlash(__('<div class="col-md-10 col-md-offset-1 alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><strong>Attention!</strong> Une erreur est survenue lors de votre inscription !</div>'));
+                $this->Session->setFlash(__('Nous sommes désolé, une erreur est survenue. Merci de réessayer.'));
             }
         }
     }
 
 
-
+    //TODO securité
     public function edit($id = null){
 		
 		if($this->Session->read('Auth.User.role') != "Association"){
@@ -110,6 +130,38 @@ class AssociationsController extends AppController {
 
     }
 
+    //TODO securité
+    public function view_dons($id = null) {
+
+        if(!$id){
+            throw new NotFoundException(__('Association invalide'));
+        }
+
+        $asso = $this->Association->findById($id);
+
+        if(!$asso){
+            throw new NotFoundException(__('Donneur invalide'));
+        }
+
+        $this->loadModel('Don');
+
+        $this->paginate = array(
+            'conditions' => array('Don.association_id =' => $id),
+            'limit' => 5,
+            'order' => array(
+                'Don.date' => 'desc'
+            )
+        );
+
+        $dons = $this->paginate('Don');
+
+        $this->set('dons', $dons);
+        $this->set('asso_id', $id);
+        //$dons = $this->Don->find('all', array('conditions' => array('Don.association_id' => $id), 'order' => array('Don.date' => 'desc')));
+
+    }
+
+
 
     public function totalDon($association){
 
@@ -120,6 +172,8 @@ class AssociationsController extends AppController {
         return $totalDon;
 
     }
+
+
 
 
 

@@ -97,50 +97,5 @@ class UsersController extends AppController {
         }
     }
 
-    public function editPassword($idUser = null, $password=null){
-
-        if(!$idUser && !$password){
-            throw new NotFoundException(__('Invalid Data'));
-            return false;
-        }
-
-        $user = $this->User->findById($idUser);
-
-        if (!$user) {
-            throw new NotFoundException(__('Invalid post'));
-            return false;
-        }
-
-        $user['password'] = $password;
-
-        if ($this->User->save($user)) {
-
-
-
-        }
-
-
-
-
-
-    }
-
-
-    public function editUser($idUser = null){
-
-        $this->User->id = $idUser;
-        if (!$this->User->exists()) {
-            throw new NotFoundException(__('User Invalide'));
-            return false;
-        }
-
-        if ($this->User->save($this->request->data)) {
-            return true;
-        }
-
-
-    }
-
 }
-
 ?>

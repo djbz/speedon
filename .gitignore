@@ -4,29 +4,35 @@ app/Config/database.php
 
 *.xml
 
-*.iml
+*.xml
+
+*.xml
+
+.idea/cake_config_setting_v0_5.xml
+
+*.xml
+
+*.xml
+
+.idea/deployment.xml
+
+.idea/encodings.xml
+
+.idea/misc.xml
+
+.idea/modules.xml
+
+.idea/scopes/scope_settings.xml
+
+.idea/speedon-prod.iml
+
+.idea/vcs.xml
+
+.idea/workspace.xml
 
 app/tmp/cache/persistent/myapp_cake_core_cake_dev_eng
 
 app/tmp/cache/persistent/myapp_cake_core_cake_dev_fr
-
-app/tmp/cache/persistent/myapp_cake_core_default_fr-fr
-
-app/tmp/cache/models/myapp_cake_model_default_speedon_associations
-
-app/tmp/cache/models/myapp_cake_model_default_speedon_associations_donneurs
-
-app/tmp/cache/models/myapp_cake_model_default_speedon_donneurs
-
-app/tmp/cache/models/myapp_cake_model_default_speedon_donneurs_recompenses
-
-app/tmp/cache/models/myapp_cake_model_default_speedon_dons
-
-app/tmp/cache/models/myapp_cake_model_default_speedon_list
-
-app/tmp/cache/models/myapp_cake_model_default_speedon_recompenses
-
-app/tmp/cache/models/myapp_cake_model_default_speedon_users
 
 app/tmp/cache/persistent/myapp_cake_core_cake_dev_fr-fr
 
@@ -36,6 +42,12 @@ app/tmp/cache/persistent/myapp_cake_core_cake_fr-fr
 
 app/tmp/cache/persistent/myapp_cake_core_file_map
 
-app/tmp/cache/persistent/myapp_cake_core_method_cache
+app/tmp/logs/error.log
 
-*.log
+app/tmp/cache/persistent/myapp_cake_core_cake_dev_fr-fr
+
+app/tmp/cache/persistent/myapp_cake_core_cake_fr-fr
+
+app/tmp/cache/persistent/myapp_cake_core_file_map
+
+app/tmp/logs/error.log
