@@ -45,7 +45,7 @@
             <div class="col-lg-10 col-md-offset-2 well">
                 <?php echo '<h4>'.$this->Html->link($new['News']['titre'], array('controller' => 'news', 'action' => 'view', $new['News']['id']), array('class' => 'col-md-12 text-center', 'style' => 'text-decoration:none;')).'</h4>'; ?>
                 <?php 
-                if(!empty(trim($new['News']['img']))){
+                if(!empty($new['News']['img'])){
                     echo '<div class="col-md-4">' . $this->Html->image($new['News']['img'], array('class' => 'img-responsive img-thumbnail')) . '</div>';
                 }
                 echo '<br/><br/><div style="text-align:justify; margin: 5px 70px 5px 70px;">'.$new['News']['texte'].'</div><br/><br/>';

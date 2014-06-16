@@ -1,11 +1,2 @@
-<<<<<<< HEAD
-1402920860
-=======
-<<<<<<< HEAD
-1402912295
+1402921800
 a:2:{s:4:"name";a:10:{s:32:"dcf68ab8d896d3c96f2fa847eb4bd015";s:9:"`speedon`";s:32:"bb7aa5fd41ad2b0db7898afa9fc7e14a";s:6:"`news`";s:32:"992560ac9a44f29b82645d88692ef12e";s:11:"`News`.`id`";s:32:"4aee37fe9b6c6c247e57acd1a1f41acc";s:14:"`News`.`titre`";s:32:"35f65a062a770f1055baff40e6378ca6";s:14:"`News`.`texte`";s:32:"5d26c301363f5a0601c6b0d60d3ab836";s:13:"`News`.`date`";s:32:"7cbc622c042a5ec9632a02306fe10fe3";s:26:"`News`.`administrateur_id`";s:32:"38a2c0feab67cb24b3431b620512ca55";s:12:"`News`.`img`";s:32:"eb549c628995be93dfe45a0f43731683";s:6:"`News`";s:32:"0dbad5b96349237116f63f0f389bd7f4";s:6:"`date`";}s:6:"fields";a:1:{s:32:"0d0d5afc342b8c340585e782417dc73b";a:6:{i:0;s:11:"`News`.`id`";i:1;s:14:"`News`.`titre`";i:2;s:14:"`News`.`texte`";i:3;s:13:"`News`.`date`";i:4;s:26:"`News`.`administrateur_id`";i:5;s:12:"`News`.`img`";}}}
-=======
-1402910345
->>>>>>> FETCH_HEAD
-a:2:{s:4:"name";a:9:{s:32:"dcf68ab8d896d3c96f2fa847eb4bd015";s:9:"`speedon`";s:32:"bb7aa5fd41ad2b0db7898afa9fc7e14a";s:6:"`news`";s:32:"992560ac9a44f29b82645d88692ef12e";s:11:"`News`.`id`";s:32:"4aee37fe9b6c6c247e57acd1a1f41acc";s:14:"`News`.`titre`";s:32:"35f65a062a770f1055baff40e6378ca6";s:14:"`News`.`texte`";s:32:"5d26c301363f5a0601c6b0d60d3ab836";s:13:"`News`.`date`";s:32:"7cbc622c042a5ec9632a02306fe10fe3";s:26:"`News`.`administrateur_id`";s:32:"38a2c0feab67cb24b3431b620512ca55";s:12:"`News`.`img`";s:32:"eb549c628995be93dfe45a0f43731683";s:6:"`News`";}s:6:"fields";a:1:{s:32:"0d0d5afc342b8c340585e782417dc73b";a:6:{i:0;s:11:"`News`.`id`";i:1;s:14:"`News`.`titre`";i:2;s:14:"`News`.`texte`";i:3;s:13:"`News`.`date`";i:4;s:26:"`News`.`administrateur_id`";i:5;s:12:"`News`.`img`";}}}
->>>>>>> FETCH_HEAD
