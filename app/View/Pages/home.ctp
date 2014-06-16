@@ -21,17 +21,17 @@
         <div class="col-md-4">
           <h2>Vous souhaitez rejoindre Speedon ?</h2>
           <p> Rejoignez le plus grand réseau d'associations !</p>
-          <p><a class="btn btn-default" href="#" role="button">Inscription &raquo;</a></p>
+          <p><?php echo $this->Html->Link('Nous rejoindre',array('controller'=>'Users','action'=>'add'),array('class' => 'btn btn-default')); ?></p>
         </div>
         <div class="col-md-4">
           <h2>Envie de plus d'informations ?</h2>
           <p>N'hésitez pas ! Contactez nous et posez nous toutes les questions que vous souhaitez !</p>
-          <p><a class="btn btn-default" href="contact" role="button">Contactez nous &raquo;</a></p>
+          <p><?php echo $this->Html->Link('Contactez-nous',array('controller'=>'Contact','action'=>'index'),array('class' => 'btn btn-default')); ?></p>
         </div>
         <div class="col-md-4">
           <h2>Nouveau visiteur ? Lisez notre FAQ !</h2>
           <p>Vous y trouverez plein d'informations vitales ! </p>
-          <p><a class="btn btn-default" href="#" role="button">Lire notre FAQ &raquo;</a></p>
+          <p><?php echo $this->Html->Link('Lire la FAQ',array('controller'=>'FAQ','action'=>'index'),array('class' => 'btn btn-default')); ?></p>
         </div>
       </div>
 	  </div>

@@ -8,9 +8,9 @@
     				<div class="container col-md-12">
 						<div class="row">
                         	<div class="col-md-12 text-center">
-                            	<?php echo $this->HTML->Link('Gérer les news',array('controller'=>'News','action'=>'manage'),array('class' => 'btn btn-default'));  ?>
-                           		<?php echo $this->HTML->Link('Gérer les récompenses',array('controller'=>'Recompenses','action'=>'manage'),array('class' => 'btn btn-default'));  ?>
-								<?php echo $this->HTML->Link('Gérer les associations',array('controller'=>'Vendeurs','action'=>'index'),array('class' => 'btn btn-default'));  ?>
+                            	<?php echo $this->Html->Link('Gérer les news',array('controller'=>'News','action'=>'manage'),array('class' => 'btn btn-default'));  ?>
+                           		<?php echo $this->Html->Link('Gérer les récompenses',array('controller'=>'Recompenses','action'=>'manage'),array('class' => 'btn btn-default'));  ?>
+								<?php echo $this->Html->Link('Gérer les associations',array('controller'=>'Vendeurs','action'=>'index'),array('class' => 'btn btn-default'));  ?>
 							</div>
                         </div>
                    </div>
