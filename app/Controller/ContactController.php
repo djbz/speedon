@@ -14,7 +14,7 @@ class ContactController extends AppController {
     }
 
 	public function send() {
-		$nom = $_POST["nom"];
+    $nom = $_POST["nom"];
 		$prenom = $_POST["prenom"];
 		$societe = $_POST["societe"];
 		$email = $_POST["email"];
@@ -31,7 +31,17 @@ class ContactController extends AppController {
    $Email->viewVars(compact('societe')); 
    $Email->viewVars(compact('email')); 
    $Email->viewVars(compact('demande'));  
-   $Email->send();
+   if(isset($email)) {
+   if($Email->send()) {
+                $this->Session->setFlash(__('Demande envoyé'));
+               return $this->redirect(array('action' => 'index'));
+             }
+              $this->Session->setFlash(__('Votre post à été modifiée avec succès'));
+              return $this->redirect(array('action' => 'index'));
+
+      }
+    $this->Session->setFlash(__('Veuillez rentrer correction les informations'));
+              return $this->redirect(array('action' => 'index'));   
 	}
 }
 ?>

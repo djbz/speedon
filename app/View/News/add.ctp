@@ -20,6 +20,12 @@
                                 <?php echo $this->Form->input('texte', array('label' => false, 'class' => 'col-md-12 form-control', 'rows' => '5', 'placeholder' => 'Contenu')); ?>
                             </div>
                         </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <?php echo $this->Form->input('img', array('label' => false, 'class' => 'col-md-12 form-control', 'placeholder' => 'Lien image')); ?>
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 text-center">
@@ -36,4 +42,4 @@
             </div>
         </div>
 
-    </div>		
+    </div>      
